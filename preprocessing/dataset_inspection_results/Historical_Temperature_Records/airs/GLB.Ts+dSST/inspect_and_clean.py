@@ -53,11 +53,11 @@ def main():
     """
     Main function to set up paths and run the inspection and cleaning process.
     """
-    file_path = '/Users/alexocegueda/Documents/code/python/ClimateChange/preprocessing/data/Historical_Temperature_Records/airs/GLB.Ts+dSST.csv'
+    file_path = '../../../../data/Historical_Temperature_Records/airs/GLB.Ts+dSST.csv'
 
-    base_output_dir = '/Users/alexocegueda/Documents/code/python/ClimateChange/preprocessing/dataset_inspection_results'
+    base_output_dir = '../../airs/'
     dataset_name = 'GLB.Ts+dSST'
-    dataset_dir = os.path.join(base_output_dir, 'Historical_Temperature_Records', 'airs', dataset_name)
+    dataset_dir = os.path.join(base_output_dir, dataset_name)
 
     if not os.path.exists(dataset_dir):
         os.makedirs(dataset_dir)

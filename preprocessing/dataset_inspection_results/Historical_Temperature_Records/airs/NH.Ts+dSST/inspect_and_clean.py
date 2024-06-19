@@ -3,7 +3,7 @@ import os
 
 def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
     """
-    Load, clean, and inspect the GLB.Ts+dSST dataset.
+    Load, clean, and inspect the dataset.
 
     Parameters:
     - file_path (str): The file path to the CSV dataset.
@@ -15,11 +15,15 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
     """
     data = pd.read_csv(file_path, header=1, sep=',')
     
-    columns_to_convert = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'J-D', 'D-N', 'DJF', 'JJA', 'SON']
+    data['Year'] = pd.to_numeric(data['Year'], errors='coerce')
+    
+    columns_to_convert = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'J-D', 'D-N', 'DJF', 'MAM', 'JJA', 'SON']
     for col in columns_to_convert:
         data[col] = pd.to_numeric(data[col], errors='coerce')
     
     data.interpolate(method='linear', inplace=True)
+    
+    data.fillna(method='bfill', inplace=True)
     
     cleaned_file_path = os.path.join(dataset_dir, f'Cleaned_{dataset_name}.csv')
     data.to_csv(cleaned_file_path, index=False)
@@ -30,9 +34,8 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
         f.write(data.head().to_string())
         f.write("\n\n")
         
-        data_info = data.info(buf=None)
         f.write("Data structure:\n")
-        f.write(str(data_info))
+        data.info(buf=f)
         f.write("\n\n")
         
         f.write("Missing values:\n")
@@ -49,10 +52,10 @@ def main():
     """
     Main function to set up paths and run the inspection and cleaning process.
     """
-    file_path = '../../../../data/Historical_Temperature_Records/global/GLB.Ts+dSST.csv'
-
-    base_output_dir = '../../global/'
-    dataset_name = 'GLB.Ts+dSST'
+    file_path = '../../../../data/Historical_Temperature_Records/airs/NH.Ts+dSST.csv'
+    
+    base_output_dir = '../../airs/'
+    dataset_name = 'NH.Ts+dSST'
     dataset_dir = os.path.join(base_output_dir, dataset_name)
 
     if not os.path.exists(dataset_dir):
