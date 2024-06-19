@@ -34,7 +34,7 @@ The dataset contained some missing values (NaNs), particularly in the monthly, s
    - Columns with temperature data were converted to numeric types to handle any non-numeric values as NaNs.
 
 3. **Interpolation and Additional Filling**:
-   - Linear interpolation was applied to fill in the missing values. Additionally, forward fill (`ffill`) and backward fill (`bfill`) methods were used to ensure any remaining NaNs were handled.
+   - Linear interpolation was applied to fill in the missing values. Additionally, backward fill (`bfill`) methods were used to ensure any remaining NaNs were handled.
 
 #### Why Linear Interpolation and Filling?
 

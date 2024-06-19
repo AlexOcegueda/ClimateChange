@@ -22,8 +22,6 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
         data[col] = pd.to_numeric(data[col], errors='coerce')
     
     data.interpolate(method='linear', inplace=True)
-    
-    data.fillna(method='ffill', inplace=True)
     data.fillna(method='bfill', inplace=True)
     
     cleaned_file_path = os.path.join(dataset_dir, f'Cleaned_{dataset_name}.csv')
@@ -36,7 +34,7 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
         f.write("\n\n")
         
         f.write("Data structure:\n")
-        data_info = data.info(buf=f)
+        data.info(buf=f)
         f.write("\n\n")
         
         f.write("Missing values:\n")
@@ -53,10 +51,10 @@ def main():
     """
     Main function to set up paths and run the inspection and cleaning process.
     """
-    file_path = '../../../../data/Historical_Temperature_Records/airs/GLB.Ts+dSST.csv'
-
-    base_output_dir = '../../airs/'
-    dataset_name = 'GLB.Ts+dSST'
+    file_path = '../../../../data/Historical_Temperature_Records/land_ocean_regional_temp/NH.Ts+dSST.csv'
+    
+    base_output_dir = '../../land_ocean_regional_temp/'
+    dataset_name = 'NH.Ts+dSST'
     dataset_dir = os.path.join(base_output_dir, dataset_name)
 
     if not os.path.exists(dataset_dir):

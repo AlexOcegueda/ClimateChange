@@ -35,7 +35,7 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
         f.write("\n\n")
         
         f.write("Data structure:\n")
-        data.info(buf=f)
+        data_info = data.info(buf=f)
         f.write("\n\n")
         
         f.write("Missing values:\n")
@@ -52,10 +52,10 @@ def main():
     """
     Main function to set up paths and run the inspection and cleaning process.
     """
-    file_path = '../../../../data/Historical_Temperature_Records/airs/NH.Ts+dSST.csv'
-    
-    base_output_dir = '../../airs/'
-    dataset_name = 'NH.Ts+dSST'
+    file_path = '../../../../data/Historical_Temperature_Records/airs_temp_anomalies/GLB.Ts+dSST.csv'
+
+    base_output_dir = '../../airs_temp_anomalies/'
+    dataset_name = 'GLB.Ts+dSST'
     dataset_dir = os.path.join(base_output_dir, dataset_name)
 
     if not os.path.exists(dataset_dir):
