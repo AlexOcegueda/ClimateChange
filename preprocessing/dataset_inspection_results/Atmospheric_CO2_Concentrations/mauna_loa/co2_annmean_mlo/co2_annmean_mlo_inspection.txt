@@ -1,0 +1,31 @@
+First few rows:
+   year    mean   unc
+0  1959  315.98  0.12
+1  1960  316.91  0.12
+2  1961  317.64  0.12
+3  1962  318.45  0.12
+4  1963  318.99  0.12
+
+Data structure:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 65 entries, 0 to 64
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   year    65 non-null     int64  
+ 1   mean    65 non-null     float64
+ 2   unc     65 non-null     float64
+dtypes: float64(2), int64(1)
+memory usage: 1.6 KB
+
+
+Missing values:
+year    0
+mean    0
+unc     0
+
+Summary statistics:
+      count     mean        std      min      25%      50%      75%      max
+year   65.0  1991.00  18.907670  1959.00  1975.00  1991.00  2007.00  2023.00
+mean   65.0   359.26  31.324989   315.98   331.13   355.70   384.02   421.08
+unc    65.0     0.12   0.000000     0.12     0.12     0.12     0.12     0.12
