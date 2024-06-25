@@ -34,3 +34,40 @@ This repository contains a comprehensive data analysis and visualization tool de
    ```
    pip install -r requirements.txt
    ```
+
+## Data Sources
+[List of the datasets you are using, with links to their sources]
+
+- **Historical Temperature Records**: 
+  - [NASA GISS Temperature Data](https://data.giss.nasa.gov/gistemp/)
+- **Atmospheric CO2 Concentrations**: 
+  - [Mauna Loa CO2 Data](https://gml.noaa.gov/ccgg/trends/data.html)
+  - [Global CO2 Data](https://gml.noaa.gov/ccgg/trends/gl_data.html)
+- **Sea Level Rise**:
+  - [Global Mean Sea Level Data (TOPEX/Jason)](https://climatedataguide.ucar.edu/climate-data/global-mean-sea-level-topex-jason-altimetry)
+  - [NOAA Global Mean Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html)
+  - [NOAA US Mean Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html)
+
+## Credits
+Special thanks to the data providers for making their data publicly available:
+
+- **NASA GISS**: [NASA's Goddard Institute for Space Studies](https://data.giss.nasa.gov/gistemp/)
+  - "These data are made freely available to the public and the scientific community in the belief that their wide dissemination will lead to greater understanding and new scientific insights."
+  - GISTEMP Team, 2024: GISS Surface Temperature Analysis (GISTEMP), version 4. NASA Goddard Institute for Space Studies. Dataset accessed 2024-06-17 at https://data.giss.nasa.gov/gistemp/.
+  - Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522. Dataset accessed 2024-06-17 at https://data.giss.nasa.gov/gistemp/.
+
+- **NOAA GML**: [Atmospheric CO2 Concentrations](https://gml.noaa.gov/ccgg/trends/)
+  - "These data are made freely available to the public and the scientific community. Contact: Xin Lan (xin.lan@noaa.gov)."
+  - TODO: Update citation when cite is not down.
+
+- **UCAR**: [Global Mean Sea Level Data](https://climatedataguide.ucar.edu/climate-data/global-mean-sea-level-topex-jason-altimetry)
+  - "Data from TOPEX/Jason altimetry missions provided by UCAR. Please ensure appropriate citation and credit."
+  - Nerem, R.S. & National Center for Atmospheric Research Staff (Eds). Last modified 2022-09-09 "The Climate Data Guide: Global Mean Sea Level from TOPEX & Jason Altimetry.” Retrieved from https://climatedataguide.ucar.edu/climate-data/global-mean-sea-level-topex-jason-altimetry on 2024-06-17.
+
+- **NOAA Tides and Currents**: [Global Linear Relative Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html)
+  - "Data provided by NOAA Tides and Currents. Accessed on 2024-06-17."
+  - Contact them: (https://tidesandcurrents.noaa.gov/contact.html)
+
+- **NOAA Tides and Currents**: [US Linear Relative Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html)
+  - "Data provided by NOAA Tides and Currents. Accessed on 2024-06-17."
+  - Contact them: (https://tidesandcurrents.noaa.gov/contact.html)
