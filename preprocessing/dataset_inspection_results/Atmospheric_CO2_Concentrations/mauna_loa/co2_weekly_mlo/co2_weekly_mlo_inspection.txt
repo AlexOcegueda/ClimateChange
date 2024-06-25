@@ -1,0 +1,45 @@
+First few rows:
+     year  month   day    decimal average  ndays 1_year_ago 10_years_ago increase_since_1800
+0     NaN    NaN   NaN        NaN     NaN    NaN        NaN          NaN                 NaN
+1  1974.0    5.0  19.0  1974.3795  333.37    5.0       <NA>         <NA>                50.4
+2  1974.0    5.0  26.0  1974.3986  332.95    6.0       <NA>         <NA>               50.06
+3  1974.0    6.0   2.0  1974.4178  332.35    5.0       <NA>         <NA>                49.6
+4  1974.0    6.0   9.0  1974.4370   332.2    7.0       <NA>         <NA>               49.65
+
+Data structure:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2614 entries, 0 to 2613
+Data columns (total 9 columns):
+ #   Column               Non-Null Count  Dtype  
+---  ------               --------------  -----  
+ 0   year                 2613 non-null   float64
+ 1   month                2613 non-null   float64
+ 2   day                  2613 non-null   float64
+ 3   decimal              2613 non-null   float64
+ 4   average              2595 non-null   object 
+ 5   ndays                2613 non-null   float64
+ 6   1_year_ago           2543 non-null   object 
+ 7   10_years_ago         2073 non-null   object 
+ 8   increase_since_1800  2595 non-null   object 
+dtypes: float64(5), object(4)
+memory usage: 183.9+ KB
+
+
+Missing values:
+year                     1
+month                    1
+day                      1
+decimal                  1
+average                 19
+ndays                    1
+1_year_ago              71
+10_years_ago           541
+increase_since_1800     19
+
+Summary statistics:
+          count         mean        std        min        25%        50%        75%        max
+year     2613.0  1998.909300  14.464398  1974.0000  1986.0000  1999.0000  2011.0000  2024.0000
+month    2613.0     6.519326   3.447055     1.0000     4.0000     7.0000    10.0000    12.0000
+day      2613.0    15.725603   8.802240     1.0000     8.0000    16.0000    23.0000    31.0000
+decimal  2613.0  1999.408987  14.459054  1974.3795  1986.8945  1999.4096  2011.9247  2024.4385
+ndays    2613.0     5.890930   1.363761     0.0000     5.0000     6.0000     7.0000     7.0000
