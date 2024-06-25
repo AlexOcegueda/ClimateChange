@@ -13,26 +13,16 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
     Returns:
     - pd.DataFrame: The cleaned dataset.
     """
-    column_names = ['year', 'month', 'day', 'decimal', 'average', 'ndays', '1_year_ago', '10_years_ago', 'increase_since_1800']
+    column_names = ['year', 'mean', 'unc']
     
-    data = pd.read_csv(file_path, names=column_names, comment='#', skiprows=30).dropna(how='all')
+    data = pd.read_csv(file_path, names=column_names, comment='#', skiprows=24)
     
     data['year'] = pd.to_numeric(data['year'], errors='coerce')
-    data['month'] = pd.to_numeric(data['month'], errors='coerce')
-    data['day'] = pd.to_numeric(data['day'], errors='coerce')
-    data['decimal'] = pd.to_numeric(data['decimal'], errors='coerce')
-    data['average'] = pd.to_numeric(data['average'], errors='coerce')
-    data['ndays'] = pd.to_numeric(data['ndays'], errors='coerce')
-    data['1_year_ago'] = pd.to_numeric(data['1_year_ago'], errors='coerce')
-    data['10_years_ago'] = pd.to_numeric(data['10_years_ago'], errors='coerce')
-    data['increase_since_1800'] = pd.to_numeric(data['increase_since_1800'], errors='coerce')
-    
-    # Replace placeholder values with NaN
-    placeholder_value = -999.99
-    data.replace(placeholder_value, pd.NA, inplace=True)
+    data['mean'] = pd.to_numeric(data['mean'], errors='coerce')
+    data['unc'] = pd.to_numeric(data['unc'], errors='coerce')
     
     data = data.dropna(how='all')
-    
+
     cleaned_file_path = os.path.join(dataset_dir, f'Cleaned_{dataset_name}.csv')
     data.to_csv(cleaned_file_path, index=False)
     
@@ -60,10 +50,10 @@ def main():
     """
     Main function to set up paths and run the inspection and cleaning process.
     """
-    file_path = '../../../../data/Atmospheric_CO2_Concentrations/mauna-loa/co2_weekly_mlo.csv'
+    file_path = '../../../../data/Atmospheric_CO2_Concentrations/global/co2_annmean_gl.csv'
     
-    base_output_dir = '../../mauna_loa'
-    dataset_name = 'co2_weekly_mlo'
+    base_output_dir = '../../global'
+    dataset_name = 'co2_annmean_gl'
     dataset_dir = os.path.join(base_output_dir, dataset_name)
 
     if not os.path.exists(dataset_dir):

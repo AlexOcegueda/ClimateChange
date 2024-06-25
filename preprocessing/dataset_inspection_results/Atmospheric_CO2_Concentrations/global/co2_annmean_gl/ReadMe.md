@@ -1,24 +1,19 @@
-# CO2 Weekly Mean Concentrations at Mauna Loa
+# Atmospheric CO2 Concentrations - Global Annual Mean
 
-## Overview
-This project involves the inspection and basic cleaning of a dataset containing the weekly mean CO2 concentrations at Mauna Loa Observatory. The dataset includes weekly measurements of CO2 concentrations along with the corresponding year, month, day, decimal date, average concentration, number of days, values from 1 year ago, 10 years ago, and increase since 1800.
+## About This Dataset
+
+### Overview
+This dataset contains the global annual mean CO2 concentrations, measured in parts per million (ppm), from 1979 to 2023. The data is provided by the NOAA Global Monitoring Laboratory (GML) and includes uncertainty values for each year's mean concentration.
 
 ## Cleaning Process
 The cleaning process involved the following steps:
 1. **Loading the Dataset**: The dataset was loaded while skipping initial comment lines to ensure only relevant data was processed.
 2. **Defining Headers**: The headers were:
-    - year
-    - month
-    - day
-    - decimal
-    - average
-    - ndays
-    - 1_year_ago
-    - 10_years_ago
-    - increase_since_1800
-3. **Data Type Conversion**: The `year`, `month`, `day`, `decimal`, `average`, `ndays`, `1_year_ago`, `10_years_ago`, and `increase_since_1800` columns were converted to numeric types using `pandas`' `to_numeric` method. 
+    - Year: The year of the measurement.
+    - Mean: The global annual mean CO2 concentration in ppm.
+    - Unc: The uncertainty associated with th emean CO2 concentration.
+3. **Data Type Conversion**: The `year`, `Mean`, and `Unc` columns were converted to numeric types using `pandas`' `to_numeric` method. 
 4. **Identifying Missing Data**: Rows with missing data were identified and logged for review.
-    - The some rows for 1 year ago and 10 years ago had placeholders of -999.99 so I converted those to NaNs.
 
 ## Dataset Source
 
@@ -38,7 +33,7 @@ These data are made freely available to the public and the scientific community 
 
 ## Files
 
-- `co2_weekly_mlo.csv`: The original dataset.
-- `Cleaned_co2_weekly_mlo.csv`: The cleaned dataset.
-- `co2_weekly_mlo_inspection.txt`: The inspection results.
+- `co2_annmean_gl.csv`: The original dataset.
+- `Cleaned_co2_annmean_gl.csv`: The cleaned dataset.
+- `co2_annmean_gl_inspection.txt`: The inspection results.
 - `inspect_and_clean.py`: The Python script used for data cleaning and inspection.
