@@ -21,6 +21,8 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
     data['ann_inc'] = pd.to_numeric(data['ann_inc'], errors='coerce')
     data['unc'] = pd.to_numeric(data['unc'], errors='coerce')
     
+    data = data.dropna(how='all')
+
     cleaned_file_path = os.path.join(dataset_dir, f'Cleaned_{dataset_name}.csv')
     data.to_csv(cleaned_file_path, index=False)
     

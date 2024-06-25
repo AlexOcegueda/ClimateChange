@@ -27,7 +27,6 @@ This repository contains a comprehensive data analysis and visualization tool de
 1. **Clone the Repository**:
    ```
    git clone https://github.com/AlexOcegueda/ClimateChange.git
-   cd your-repo
    ```
 
 2. **Install Dependencies**:

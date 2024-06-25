@@ -1,0 +1,43 @@
+First few rows:
+     year  month   decimal  average  average_unc   trend  trend_unc
+1  1979.0    1.0  1979.042   336.56         0.11  335.92       0.09
+2  1979.0    2.0  1979.125   337.29         0.09  336.25       0.10
+3  1979.0    3.0  1979.208   337.88         0.11  336.51       0.10
+4  1979.0    4.0  1979.292   338.32         0.12  336.72       0.10
+5  1979.0    5.0  1979.375   338.26         0.03  336.71       0.10
+
+Data structure:
+<class 'pandas.core.frame.DataFrame'>
+Index: 543 entries, 1 to 543
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype  
+---  ------       --------------  -----  
+ 0   year         543 non-null    float64
+ 1   month        543 non-null    float64
+ 2   decimal      543 non-null    float64
+ 3   average      543 non-null    float64
+ 4   average_unc  543 non-null    float64
+ 5   trend        543 non-null    float64
+ 6   trend_unc    543 non-null    float64
+dtypes: float64(7)
+memory usage: 33.9 KB
+
+
+Missing values:
+year           0
+month          0
+decimal        0
+average        0
+average_unc    0
+trend          0
+trend_unc      0
+
+Summary statistics:
+             count         mean        std       min        25%       50%        75%       max
+year         543.0  2001.127072  13.075020  1979.000  1990.0000  2001.000  2012.0000  2024.000
+month        543.0     6.475138   3.462347     1.000     3.0000     6.000     9.0000    12.000
+decimal      543.0  2001.625000  13.074571  1979.042  1990.3335  2001.625  2012.9165  2024.208
+average      543.0   374.059098  24.456223   334.360   353.7950   370.850   393.8000   423.160
+average_unc  543.0     0.099079   0.029764     0.030     0.0800     0.100     0.1100     0.290
+trend        543.0   374.051455  24.413659   335.920   353.7550   370.800   393.7750   421.520
+trend_unc    543.0     0.060958   0.016032     0.030     0.0500     0.060     0.0700     0.110
