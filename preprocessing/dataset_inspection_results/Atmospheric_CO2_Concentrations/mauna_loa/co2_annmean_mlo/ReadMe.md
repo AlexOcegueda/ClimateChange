@@ -14,9 +14,6 @@ The dataset used in this project is sourced from the NOAA Global Monitoring Labo
 
 ## Credits
 
-These data are made freely available to the public and the scientific community by NOAA GML. The data from March 1958 through April 1974 were obtained by C. David Keeling of the Scripps Institution of Oceanography (SIO) and are available from the Scripps website.
-
 - **NOAA GML**: [Atmospheric CO2 Concentrations](https://gml.noaa.gov/ccgg/trends/)
-  - "These data are made freely available to the public and the scientific community. Contact: Xin Lan (xin.lan@noaa.gov)."
-  - TODO: Update citation when cite is not down.
-  - For further inquiries or detailed information about the measurements, contact Xin Lan at xin.lan@noaa.gov.
+  - "These data are made freely available to the public and the scientific community. Contact: Xin Lan (xin.lan@noaa.gov) and Ralph Keeling (rkeeling@ucsd.edu)."
+  - "Dr. Xin Lan, NOAA/GML (https://gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (https://scrippsco2.ucsd.edu/)."
