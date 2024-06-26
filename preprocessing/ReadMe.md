@@ -4,7 +4,7 @@
 
 ### Folders
 - **data**: This contains the original datasets which haven't had any processing done
-- **dataset_inspection_results**: This contains the cleaned datasets along with an inspection file which gives a brief overview of the data. 
+- **dataset_inspection_results**: This contains the cleaned datasets along with an inspection file which gives a brief overview of the data and ReadMe which go into detail about each dataset and how they were cleaned. 
 
 ### Objectives
 - **Data Collection**: Gather and process historical climate data from reputable sources.
@@ -16,7 +16,6 @@
 ### Technologies Used
 - **Python**: For data processing, analysis, and visualization.
 - **Pandas**: For data manipulation and cleaning.
-- **Matplotlib**: For creating static, animated, and interactive visualizations.
 - **Git**: For version control and collaboration.
 
 ## Data Sources
@@ -41,12 +40,10 @@ Special thanks to the data providers for making their data publicly available:
   - Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522. Dataset accessed 2024-06-17 at https://data.giss.nasa.gov/gistemp/.
 
 - **NOAA GML**: [Atmospheric CO2 Concentrations](https://gml.noaa.gov/ccgg/trends/)
-  - "These data are made freely available to the public and the scientific community. Contact: Xin Lan (xin.lan@noaa.gov)."
-  - TODO: Update citation when cite is not down.
+  - "These data are made freely available to the public and the scientific community. Contact: Xin Lan (xin.lan@noaa.gov) and Ralph Keeling (rkeeling@ucsd.edu)."
+  - "Dr. Xin Lan, NOAA/GML (https://gml.noaa.gov/ccgg/trends/) and Dr. Ralph Keeling, Scripps Institution of Oceanography (https://scrippsco2.ucsd.edu/)."
 
-- **UCAR**: [Global Mean Sea Level Data](https://climatedataguide.ucar.edu/climate-data/global-mean-sea-level-topex-jason-altimetry)
-  - "Data from TOPEX/Jason altimetry missions provided by UCAR. Please ensure appropriate citation and credit."
-  - Nerem, R.S. & National Center for Atmospheric Research Staff (Eds). Last modified 2022-09-09 "The Climate Data Guide: Global Mean Sea Level from TOPEX & Jason Altimetry.” Retrieved from https://climatedataguide.ucar.edu/climate-data/global-mean-sea-level-topex-jason-altimetry on 2024-06-17.
+  - NOTE: Due to the eruption of the Mauna Loa Volcano, measurements from Mauna Loa Observatory were suspended as of Nov. 29, 2022, and resumed in July 2023. Observations starting from December 2022 to July 4, 2023, are from a site at the Maunakea Observatories, approximately 21 miles north of the Mauna Loa Observatory.
 
 - **NOAA Tides and Currents**: [Global Linear Relative Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html)
   - "Data provided by NOAA Tides and Currents. Accessed on 2024-06-17."
