@@ -19,6 +19,8 @@ This repository contains a comprehensive data analysis and visualization tool de
 
 ### Technologies Used
 - **Python**: For data processing, analysis, and visualization.
+- **Sqlite3**: For holding all datasets for quick access.
+- **Shutil**: For making backup databases.
 - **Pandas**: For data manipulation and cleaning.
 - **Tabulate**: For data formatting in inspection files.
 - **Git**: For version control and collaboration.
@@ -43,7 +45,6 @@ This repository contains a comprehensive data analysis and visualization tool de
   - [Mauna Loa CO2 Data](https://gml.noaa.gov/ccgg/trends/data.html)
   - [Global CO2 Data](https://gml.noaa.gov/ccgg/trends/gl_data.html)
 - **Sea Level Rise**:
-  - [Global Mean Sea Level Data (TOPEX/Jason)](https://climatedataguide.ucar.edu/climate-data/global-mean-sea-level-topex-jason-altimetry)
   - [NOAA Global Mean Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html)
   - [NOAA US Mean Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html)
 

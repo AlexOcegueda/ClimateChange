@@ -1,2 +1,4 @@
 pandas
-matplotlib
+tabulate
+sqlite3
+shutil
