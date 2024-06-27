@@ -4,3 +4,4 @@ node_modules/
 .DS_Store
 Backend
 Frontend
+/database/database_scripts/create.py
