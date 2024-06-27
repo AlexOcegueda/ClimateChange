@@ -5,6 +5,27 @@
 ### Overview
 This dataset contains the global annual increase in CO2 concentrations, measured in parts per million (ppm), from 1959 to 2023. The data is provided by the NOAA Global Monitoring Laboratory (GML) and includes uncertainty values for each year's increase.
 
+NOTE from creators of dataset:
+Annual CO2 mole fraction increase (ppm) from Jan 1 through Dec 31.
+
+The uncertainty in the global annual mean growth rate is estimated using a
+monte carlo technique that computes 200 time series of global annual growth
+rates, each time using measurement records from a different sampling of sites
+from the NOAA GML cooperative air sampling network.  Each year has a different
+uncertainty.  Please see Conway et al., 1994, JGR, vol. 99, no. D11. for a
+complete discussion.  The last one or two years listed could have preliminary
+uncertainties set equal to the average uncertainty since 1980.
+Before 1980 the global growth rate has been approximated by taking the average
+of Mauna Loa and the South Pole, correcting for the offset between (MLO+SPO)/2
+and the global Marine Boundary Layer, as described in Ballantyne et al, 2012
+
+CO2 expressed as a mole fraction in dry air, micromol/mol, abbreviated as ppm
+
+In general, the data presented for the last year are subject to change,
+depending on recalibration of the reference gas mixtures used, and other quality
+control procedures. Occasionally, earlier years may also be changed for the same
+reasons.  Usually these changes are minor.
+
 ### Data Description
 - **Year**: The year of the measurement.
 - **Ann Inc**: The annual increase in global CO2 concentration in ppm.

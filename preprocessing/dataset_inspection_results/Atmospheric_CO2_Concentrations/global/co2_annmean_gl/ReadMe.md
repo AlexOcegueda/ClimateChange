@@ -5,6 +5,19 @@
 ### Overview
 This dataset contains the global annual mean CO2 concentrations, measured in parts per million (ppm), from 1979 to 2023. The data is provided by the NOAA Global Monitoring Laboratory (GML) and includes uncertainty values for each year's mean concentration.
 
+NOTE from dataset creators:
+The uncertainty in the global annual mean is estimated using a monte carlo
+technique that computes 200 global annual averages, each time using a
+slightly different set of measurement records from the NOAA GML cooperative
+air sampling network.  The reported uncertainty is the mean of the standard
+deviations for each annual average using this technique. Please see
+Conway et al., 1994, JGR, vol. 99, no. D11. for a complete discussion.
+
+In general, the data presented for the last year are subject to change,
+depending on recalibration of the reference gas mixtures used, and other quality
+control procedures. Occasionally, earlier years may also be changed for the same
+reasons.  Usually these changes are minor.
+
 ## Cleaning Process
 The cleaning process involved the following steps:
 1. **Loading the Dataset**: The dataset was loaded while skipping initial comment lines to ensure only relevant data was processed.

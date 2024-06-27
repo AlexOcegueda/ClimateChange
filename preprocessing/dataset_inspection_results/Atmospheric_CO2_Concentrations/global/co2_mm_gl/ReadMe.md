@@ -5,6 +5,24 @@
 ### Overview
 This dataset contains the global monthly mean CO2 concentrations, measured in parts per million (ppm), from January 1979 to February 2024. The data is provided by the NOAA Global Monitoring Laboratory (GML) and includes uncertainty values for each month's mean concentration and trend.
 
+NOTE from creators of dataset:
+See gml.noaa.gov/ccgg/trends/ for additional details.
+
+The uncertainty in the global monthly mean is estimated using a
+a monte carlo technique that computes 200 globally-averaged time
+series, each time using a slightly different set of measurement
+records from the NOAA GML cooperative air sampling network.  The
+reported uncertainty is the mean of the standard deviations
+for each monthly mean using this technique.  Please see Conway et al.,
+1994, JGR, vol. 99, no. D11. for a complete discussion.  Units are ppm.
+
+CO2 expressed as a mole fraction in dry air, micromol/mol, abbreviated as ppm
+
+In general, the data presented for the last year are subject to change,
+depending on recalibration of the reference gas mixtures used, and other quality
+control procedures. Occasionally, earlier years may also be changed for the same
+reasons.  Usually these changes are minor.
+
 ### Data Description
 - **Year**: The year of the measurement.
 - **Month**: The month of the measurement.
