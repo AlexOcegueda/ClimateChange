@@ -90,7 +90,9 @@ class DatabaseApp:
         new_order = "DESC" if order == "asc" else "ASC"
         self.sort_order[col] = "desc" if order == "asc" else "asc"
 
-        self.cursor.execute(f"SELECT * FROM {table} ORDER BY {col} {new_order}")
+        headers = ", ".join(self.tree["columns"]) 
+
+        self.cursor.execute(f"SELECT {headers} FROM {table} ORDER BY {col} {new_order}")
         rows = self.cursor.fetchall()
 
         self.tree.delete(*self.tree.get_children())
