@@ -1,10 +1,11 @@
 # CO2 Monthly Mean Concentrations at Mauna Loa
 
 ## Overview
+
 This project involves the inspection and basic cleaning of a dataset containing the monthly mean CO2 concentrations at Mauna Loa Observatory. The dataset includes monthly measurements of CO2 concentrations along with the corresponding year, month, decimal date, average concentration, deseasonalized concentration, number of days, standard deviation, and uncertainty.
 
 ## Cleaning Process
-The cleaning process involved the following steps:
+
 1. **Loading the Dataset**: The dataset was loaded while skipping initial comment lines to ensure only relevant data was processed.
 2. **Defining Headers**:The headers were:
     - year
@@ -16,7 +17,7 @@ The cleaning process involved the following steps:
     - sdev
     - unc
 3. **Data Type Conversion**: The `year`, `month`, `decimal_date`, `average`, `deseasonalized`, `ndays`, `sdev`, and `unc` columns were converted to numeric types using `pandas`' `to_numeric` method. 
-4. **Identifying Missing Data**: Rows with missing data were identified and logged for review.
+4. **Identifying Missing Data**: Rows with missing data were identified and logged for review. They were also replaced with NaNs for better data analysis.
 
 The script `inspect_and_clean.py` was used to perform these steps. The cleaned dataset was saved to a new CSV file, and an inspection report was generated to provide an overview of the data.
 
