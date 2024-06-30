@@ -2,17 +2,6 @@ import pandas as pd
 import os
 
 def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
-    """
-    Load, clean, and inspect the dataset.
-
-    Parameters:
-    - file_path (str): The file path to the CSV dataset.
-    - dataset_dir (str): The directory where inspection results and cleaned data will be saved.
-    - dataset_name (str): The name of the dataset.
-
-    Returns:
-    - pd.DataFrame: The cleaned dataset.
-    """
     column_names = ['year', 'month', 'decimal_date', 'average', 'deseasonalized', 'ndays', 'sdev', 'unc']
     
     data = pd.read_csv(file_path, names=column_names, comment='#', skiprows=54)
@@ -27,7 +16,8 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
     data['unc'] = pd.to_numeric(data['unc'], errors='coerce')
     
     # Replace placeholder values with NaN
-    placeholder_values = [-9.99, -0.99]
+    placeholder_values = [-9.99, -0.99, -1]
+    data['ndays'] = data['ndays'].replace(-1, pd.NA)
     data['sdev'] = data['sdev'].replace(placeholder_values, pd.NA)
     data['unc'] = data['unc'].replace(placeholder_values, pd.NA)
     
@@ -55,9 +45,6 @@ def load_clean_and_inspect(file_path, dataset_dir, dataset_name):
     return data
 
 def main():
-    """
-    Main function to set up paths and run the inspection and cleaning process.
-    """
     file_path = '../../../../data/Atmospheric_CO2_Concentrations/mauna-loa/co2_mm_mlo.csv'
     
     base_output_dir = '../../mauna_loa'

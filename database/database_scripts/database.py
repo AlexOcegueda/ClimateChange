@@ -86,6 +86,9 @@ class DatabaseApp:
             self.tree.insert("", tk.END, values=row)
 
     def sort_column(self, table, col):
+        if col not in self.sort_order:
+            self.sort_order[col] = 'asc'  # Default sorting order
+
         order = self.sort_order[col]
         new_order = "DESC" if order == "asc" else "ASC"
         self.sort_order[col] = "desc" if order == "asc" else "asc"
