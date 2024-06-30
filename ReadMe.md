@@ -36,6 +36,25 @@ This repository contains a comprehensive data analysis and visualization tool de
    pip install -r requirements.txt
    ```
 
+### Viewing the Database
+
+![Climate Change Database](./assets/images/database.png)
+
+To view the database follow these steps:
+  ```
+  cd database/database_scripts
+  ```
+- then run the database.py file
+  ```
+  python database.py
+  ```
+
+How to use database:
+- Simply click a table and hit 'View/Reset' to see all columns in table.
+- Click on header options to select only the columns you want to see.
+- Click on the column names on the table displayed to sort from a-z or highest-lowest. Clicking again will reverse it to z-a or lowest-highest.
+- Click the 'View/Reset' if you want it to display without any sorting filter to the table.
+
 ## Data Sources
 [List of the datasets you are using, with links to their sources]
 
