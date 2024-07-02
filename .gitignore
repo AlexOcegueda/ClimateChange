@@ -4,4 +4,8 @@ node_modules/
 .DS_Store
 Backend
 Frontend
-/database/database_scripts/create.py
+database/database_scripts/create.py
+climate-change-website/public/assets/models/clouds/
+climate-change-website/src/components/Clouds.tsx  
+climate-change-website/public/assets/models/cloud.glb
+climate-change-website/src/app/question1/

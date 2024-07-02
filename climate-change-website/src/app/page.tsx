@@ -1,12 +1,28 @@
-// src/app/page.tsx
-
 'use client';
 
+import { useState, useEffect } from 'react';
 import NavBar from '../components/NavBar';
 import EarthModel from '../components/EarthModel';
 import TableOfContents from '../components/TableOfContents';
 
 export default function HomePage() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const earthStyle = {
+    transform: `translate(${scrollY * -1.05}px, ${scrollY * 1.05}px)`,
+    transition: 'transform 0.1s linear',
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <div className="relative bg-gradient-to-b from-[#8fa5d5] via-[#8fa5d5] to-[#b2c3ee]">
@@ -20,7 +36,9 @@ export default function HomePage() {
               </p>
               <button className="mt-6 px-4 py-2 bg-orange-500 text-white rounded-full font-semibold shadow-md">Learn More</button>
             </div>
-            <EarthModel />
+            <div style={earthStyle}>
+              <EarthModel />
+            </div>
           </div>
         </main>
         <div className="absolute inset-0 overflow-hidden">
