@@ -1,0 +1,33 @@
+/* src/app/styles/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-custom-blue;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0 1rem; 
+  text-decoration: none;
+  font-size: 1.125rem; 
+  font-weight: 600; 
+  color: white;
+}
+
+.nav-link::after {
+  content: "—";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5rem; 
+  margin-left: .8rem;
+}
+
+.nav-link:last-child::after {
+  content: none;
+}
+
