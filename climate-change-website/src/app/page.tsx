@@ -19,7 +19,7 @@ export default function HomePage() {
   }, []);
 
   const earthStyle = {
-    transform: `translate(${scrollY * -1.05}px, ${scrollY * 1.05}px)`,
+    transform: `translate(${scrollY * -1}px, ${scrollY * 1}px)`,
     transition: 'transform 0.1s linear',
   };
 
