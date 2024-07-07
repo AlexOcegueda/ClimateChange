@@ -12,7 +12,7 @@ export default function NavBar() {
       </nav>
       <nav className="space-x-4 flex">
         <Link href="/about" className="nav-link text-lg font-semibold text-white">about us</Link>
-        <Link href="/locations" className="nav-link text-lg font-semibold text-white">locations</Link>
+        <Link href="/locations" className="nav-link text-lg font-semibold text-white">github</Link>
         <Link href="/contact" className="nav-link text-lg font-semibold text-white">contact</Link>
       </nav>
     </header>

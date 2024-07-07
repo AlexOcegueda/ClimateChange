@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 const TableOfContents = () => {
   return (
     <div className="bg-[#b2c3ee] py-16">
@@ -12,48 +14,68 @@ const TableOfContents = () => {
         <div className="flex justify-end">
           <div className="grid grid-cols-4 max-w-4xl">
             <div className="mr-2">
-              <div className="text-[3rem] font-bold text-white">01</div>
-              <div className="text-[1.5rem] font-bold mb-2">INTRODUCTION</div>
+              <div className="text-[3rem] font-bold text-white">
+                <Link href="/contents/introduction">01</Link>
+              </div>
+              <div className="text-[1.5rem] font-bold mb-2">
+                <Link href="/contents/introduction">INTRODUCTION</Link>
+              </div>
               <div className="text-[1rem] text-left">
-                <p>01. What is Climate Change?</p>
-                <p>02. Global Warming?</p>
+                <Link href="/contents/introduction" className="block mb-1">1.1 What's Climate Change?</Link>
+                <Link href="/contents/introduction" className="block">1.2 Global Warming?</Link>
               </div>
             </div>
-            <div>
-              <div className="text-[3rem] font-bold text-white">03</div>
-              <div className="text-[1.5rem] font-bold mb-2">CHANGE</div>
+            <div className="mr-2">
+              <div className="text-[3rem] font-bold text-white">
+                <Link href="/contents/sealevels&co2">02</Link>
+              </div>
+              <div className="text-[1.5rem] font-bold mb-2">
+                <Link href="/contents/sealevels&co2">SEA LEVELS & CO2</Link>
+              </div>
               <div className="text-[1rem] text-left">
-                <p>04. Air Travel</p>
-                <p>05. Lodging</p>
-                <p>06. Meals</p>
-                <p>07. Miscellaneous</p>
+                <Link href="/contents/sealevels&co2" className="block">2.1 Why Sea Levels & CO2?</Link>
+                <Link href="/contents/sealevels&co2" className="block mb-1">2.2 Global Sea Level Trends</Link>
+                <Link href="/contents/sealevels&co2" className="block mb-1">2.3 CO2 Concentrations</Link>
+                <Link href="/contents/sealevels&co2" className="block mb-1">2.4 Temperature Anomalies</Link>
               </div>
             </div>
-            <div>
-              <div className="text-[3rem] font-bold text-white">12</div>
-              <div className="text-[1.5rem] font-bold mb-2">PROJECTIONS</div>
+            <div className="mr-2">
+              <div className="text-[3rem] font-bold text-white">
+                <Link href="/contents/question3">03</Link>
+              </div>
+              <div className="text-[1.5rem] font-bold mb-2">
+                <Link href="/contents/question3">PROJECTIONS</Link>
+              </div>
               <div className="text-[1rem] text-left">
-                <p>12. Entertainment</p>
-                <p>13. Professional Fees</p>
-                <p>14. Supplies</p>
-                <p>15. Telephone</p>
-                <p>16. Utilities</p>
+                <Link href="/contents/question3" className="block mb-1">12. Entertainment</Link>
+                <Link href="/contents/question3" className="block mb-1">13. Professional Fees</Link>
+                <Link href="/contents/question3" className="block mb-1">14. Supplies</Link>
+                <Link href="/contents/question3" className="block mb-1">15. Telephone</Link>
+                <Link href="/contents/question3" className="block">16. Utilities</Link>
               </div>
             </div>
-            <div>
-              <div className="text-[3rem] font-bold text-white">18</div>
-              <div className="text-[1.5rem] font-bold mb-2">PROJECT</div>
+            <div className="mr-2">
+              <div className="text-[3rem] font-bold text-white">
+                <Link href="/contents/question4">04</Link>
+              </div>
+              <div className="text-[1.5rem] font-bold mb-2">
+                <Link href="/contents/question4">PROJECT</Link>
+              </div>
               <div className="text-[1rem] text-left">
-                <p>18. Github</p>
-                <p>19. Database Used</p>
+                <Link href="/contents/question4" className="block mb-1">18. Github</Link>
+                <Link href="/contents/question4" className="block">19. Database Used</Link>
               </div>
             </div>
-            <div>
-              <div className="text-[3rem] font-bold text-white">24</div>
-              <div className="text-[1.5rem] font-bold mb-2">Resources</div>
+            <div className="mr-2">
+              <div className="text-[3rem] font-bold text-white">
+                <Link href="/contents/question5">05</Link>
+              </div>
+              <div className="text-[1.5rem] font-bold mb-2">
+                <Link href="/contents/question5">Resources</Link>
+              </div>
               <div className="text-[1rem] text-left">
-                <p>22. Datasets</p>
-                <p>23. Citations</p>
+                <Link href="/contents/question5" className="block mb-1">22. Datasets</Link>
+                <Link href="/contents/question5" className="block">23. Citations</Link>
               </div>
             </div>
           </div>
