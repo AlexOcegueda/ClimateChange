@@ -46,7 +46,7 @@ const TableOfContents = () => {
               </div>
               <div className="text-[1rem] text-left">
                 <Link href="/contents/co2" className="block mb-1">3.1 Why CO2 Concentrations?</Link>
-                <Link href="/contents/co2" className="block mb-1">3.2 Global vs Mauna Loa CO2 Concentrations</Link>
+                <Link href="/contents/co2" className="block mb-1">3.2 Global vs Mauna Loa</Link>
               </div>
             </div>
             <div className="mr-2">
@@ -57,32 +57,31 @@ const TableOfContents = () => {
                 <Link href="/contents/temperature">TEMPERATURE</Link>
               </div>
               <div className="text-[1rem] text-left">
-                <Link href="/contents/temperature" className="block mb-1">18. Why Temperature Anomalies?</Link>
-                <Link href="/contents/temperature" className="block">19. Database Used</Link>
+                <Link href="/contents/temperature" className="block mb-1">4.1 Why Temperature Anomalies?</Link>
               </div>
             </div>
             <div className="mr-2">
               <div className="text-[3rem] font-bold text-white">
-                <Link href="/contents/question4">05</Link>
+                <Link href="/contents/project">05</Link>
               </div>
               <div className="text-[1.5rem] font-bold mb-2">
-                <Link href="/contents/question4">PROJECT</Link>
+                <Link href="/contents/project">PROJECT</Link>
               </div>
               <div className="text-[1rem] text-left">
-                <Link href="/contents/question4" className="block mb-1">18. Github</Link>
-                <Link href="/contents/question4" className="block">19. Database Used</Link>
+                <Link href="/contents/project" className="block mb-1">5.1 Github</Link>
+                <Link href="/contents/project" className="block">5.2 Database</Link>
               </div>
             </div>
             <div className="mr-2">
               <div className="text-[3rem] font-bold text-white">
-                <Link href="/contents/question5">06</Link>
+                <Link href="/contents/resources">06</Link>
               </div>
               <div className="text-[1.5rem] font-bold mb-2">
-                <Link href="/contents/question5">RESOURCES</Link>
+                <Link href="/contents/resources">RESOURCES</Link>
               </div>
               <div className="text-[1rem] text-left">
-                <Link href="/contents/question5" className="block mb-1">22. Datasets</Link>
-                <Link href="/contents/question5" className="block">23. Citations</Link>
+                <Link href="/contents/resources" className="block mb-1">6.1 Datasets</Link>
+                <Link href="/contents/resources" className="block">6.2 Citations</Link>
               </div>
             </div>
           </div>
