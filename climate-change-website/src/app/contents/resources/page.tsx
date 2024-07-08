@@ -17,17 +17,17 @@ const ResourcesPage = () => {
           <h2 className="text-2xl font-bold mb-4">Datasets</h2>
           <h3 className="text-1xl text-left font-bold mb-4">Historical Temperature Records</h3>
           <p className="text-left text-lg mb-4"> 
-            <a href="https://data.giss.nasa.gov/gistemp/">[NASA GISS Temperature Data]</a><br />
+            <a className="text-blue-500" href="https://data.giss.nasa.gov/gistemp/">[NASA GISS Temperature Data]</a><br />
           </p>
           <h3 className="text-1xl text-left font-bold mb-4">Atmospheric CO2 Concentrations</h3> 
           <p className="text-left text-lg mb-4"> 
-            <a href="https://gml.noaa.gov/ccgg/trends/data.html">[Mauna Loa CO2 Data]</a><br />
-            <a href="https://gml.noaa.gov/ccgg/trends/gl_data.html">[Global CO2 Data]</a>
+            <a className="text-blue-500" href="https://gml.noaa.gov/ccgg/trends/data.html">[Mauna Loa CO2 Data]</a><br />
+            <a className="text-blue-500" href="https://gml.noaa.gov/ccgg/trends/gl_data.html">[Global CO2 Data]</a>
           </p>
           <h3 className="text-1xl text-left font-bold mb-4">Sea Level Rise</h3>
           <p className="text-left text-lg mb-4">     
-            <a href="https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html">[NOAA Global Mean Sea Level Trends]</a><br />
-            <a href="https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html">[NOAA US Mean Sea Level Trends]</a>
+            <a className="text-blue-500" href="https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html">[NOAA Global Mean Sea Level Trends]</a><br />
+            <a className="text-blue-500" href="https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html">[NOAA US Mean Sea Level Trends]</a>
           </p>
           <h2 className="text-2xl font-bold mb-4">Citations</h2>
           <p className="text-left text-lg mb-4">
@@ -52,7 +52,7 @@ const ResourcesPage = () => {
           <h3 className="text-1xl text-left font-bold mb-4">NOAA Tides and Currents</h3> 
             <p className="text-left">
               NOAA Tides and Currents. Tidesandcurrents.noaa.gov, tidesandcurrents.noaa.gov.<br />
-              <a href="https://tidesandcurrents.noaa.gov/contact.html">[Contact them]</a>
+              <a className="text-blue-500" href="https://tidesandcurrents.noaa.gov/contact.html">[Contact them]</a>
             </p>
         </main>
       </div>
