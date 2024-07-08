@@ -27,36 +27,43 @@ const TableOfContents = () => {
             </div>
             <div className="mr-2">
               <div className="text-[3rem] font-bold text-white">
-                <Link href="/contents/sealevels&co2">02</Link>
+                <Link href="/contents/sealevels">02</Link>
               </div>
               <div className="text-[1.5rem] font-bold mb-2">
-                <Link href="/contents/sealevels&co2">SEA LEVELS & CO2</Link>
+                <Link href="/contents/sealevels">SEA LEVELS</Link>
               </div>
               <div className="text-[1rem] text-left">
-                <Link href="/contents/sealevels&co2" className="block">2.1 Why Sea Levels & CO2?</Link>
-                <Link href="/contents/sealevels&co2" className="block mb-1">2.2 Global Sea Level Trends</Link>
-                <Link href="/contents/sealevels&co2" className="block mb-1">2.3 CO2 Concentrations</Link>
-                <Link href="/contents/sealevels&co2" className="block mb-1">2.4 Temperature Anomalies</Link>
+                <Link href="/contents/sealevels" className="block">2.1 Why Sea Levels Trends?</Link>
+                <Link href="/contents/sealevels" className="block mb-1">2.2 Global Sea Level Trends</Link>
               </div>
             </div>
             <div className="mr-2">
               <div className="text-[3rem] font-bold text-white">
-                <Link href="/contents/question3">03</Link>
+                <Link href="/contents/co2">03</Link>
               </div>
               <div className="text-[1.5rem] font-bold mb-2">
-                <Link href="/contents/question3">PROJECTIONS</Link>
+                <Link href="/contents/co2">CO2</Link>
               </div>
               <div className="text-[1rem] text-left">
-                <Link href="/contents/question3" className="block mb-1">12. Entertainment</Link>
-                <Link href="/contents/question3" className="block mb-1">13. Professional Fees</Link>
-                <Link href="/contents/question3" className="block mb-1">14. Supplies</Link>
-                <Link href="/contents/question3" className="block mb-1">15. Telephone</Link>
-                <Link href="/contents/question3" className="block">16. Utilities</Link>
+                <Link href="/contents/co2" className="block mb-1">3.1 Why CO2 Concentrations?</Link>
+                <Link href="/contents/co2" className="block mb-1">3.2 Global vs Mauna Loa CO2 Concentrations</Link>
               </div>
             </div>
             <div className="mr-2">
               <div className="text-[3rem] font-bold text-white">
-                <Link href="/contents/question4">04</Link>
+                <Link href="/contents/temperature">04</Link>
+              </div>
+              <div className="text-[1.5rem] font-bold mb-2">
+                <Link href="/contents/temperature">TEMPERATURE</Link>
+              </div>
+              <div className="text-[1rem] text-left">
+                <Link href="/contents/temperature" className="block mb-1">18. Why Temperature Anomalies?</Link>
+                <Link href="/contents/temperature" className="block">19. Database Used</Link>
+              </div>
+            </div>
+            <div className="mr-2">
+              <div className="text-[3rem] font-bold text-white">
+                <Link href="/contents/question4">05</Link>
               </div>
               <div className="text-[1.5rem] font-bold mb-2">
                 <Link href="/contents/question4">PROJECT</Link>
@@ -68,10 +75,10 @@ const TableOfContents = () => {
             </div>
             <div className="mr-2">
               <div className="text-[3rem] font-bold text-white">
-                <Link href="/contents/question5">05</Link>
+                <Link href="/contents/question5">06</Link>
               </div>
               <div className="text-[1.5rem] font-bold mb-2">
-                <Link href="/contents/question5">Resources</Link>
+                <Link href="/contents/question5">RESOURCES</Link>
               </div>
               <div className="text-[1rem] text-left">
                 <Link href="/contents/question5" className="block mb-1">22. Datasets</Link>

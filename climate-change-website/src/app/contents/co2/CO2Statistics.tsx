@@ -4,15 +4,24 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import * as d3 from "d3";
 
-const CO2Statistics = ({ setProjections }) => {
-  const [decadeData, setDecadeData] = useState([]);
-  const svgRef = useRef(null);
+interface DecadeData {
+  decade: number;
+  average: number;
+}
+
+interface CO2StatisticsProps {
+  setProjections: React.Dispatch<React.SetStateAction<DecadeData[]>>;
+}
+
+const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
+  const [decadeData, setDecadeData] = useState<DecadeData[]>([]);
+  const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     const fetchDecadeData = async () => {
       try {
         const res = await axios.get("/api/co2statistics");
-        const completeDecadeData = res.data.data.filter(d => d.decade <= 2010);
+        const completeDecadeData = res.data.data.filter((d: DecadeData) => d.decade <= 2010);
         setDecadeData(completeDecadeData);
 
         const x = completeDecadeData.map(d => d.decade);
@@ -59,12 +68,12 @@ const CO2Statistics = ({ setProjections }) => {
       const height = +svg.attr("height") - margin.top - margin.bottom;
 
       const x = d3.scaleBand()
-        .domain(decadeData.map(d => d.decade))
+        .domain(decadeData.map(d => d.decade.toString()))
         .range([0, width])
         .padding(0.1);
 
       const y = d3.scaleLinear()
-        .domain([0, d3.max(decadeData, d => d.average)])
+        .domain([0, d3.max(decadeData, d => d.average) || 0])
         .range([height, 0]);
 
       const g = svg
@@ -88,23 +97,23 @@ const CO2Statistics = ({ setProjections }) => {
         .style("pointer-events", "none")
         .style("display", "none");
 
-      const mouseover = (event, d) => {
+      const mouseover = (event: MouseEvent, d: DecadeData) => {
         tooltip
           .html(`Decade: ${d.decade}<br/>Average Growth: ${d.average.toFixed(2)} ppm`)
           .style("display", "block");
-        d3.select(event.currentTarget)
+        d3.select(event.currentTarget as SVGRectElement)
           .attr("fill", "orange");
       };
 
-      const mousemove = (event) => {
+      const mousemove = (event: MouseEvent) => {
         tooltip
           .style("left", event.pageX + 10 + "px")
           .style("top", event.pageY - 20 + "px");
       };
 
-      const mouseout = (event) => {
+      const mouseout = (event: MouseEvent) => {
         tooltip.style("display", "none");
-        d3.select(event.currentTarget)
+        d3.select(event.currentTarget as SVGRectElement)
           .attr("fill", "steelblue");
       };
 
@@ -113,7 +122,7 @@ const CO2Statistics = ({ setProjections }) => {
         .enter()
         .append("rect")
         .attr("class", "bar")
-        .attr("x", d => x(d.decade))
+        .attr("x", d => x(d.decade.toString()) || 0)
         .attr("y", d => y(d.average))
         .attr("width", x.bandwidth())
         .attr("height", d => height - y(d.average))
@@ -124,7 +133,7 @@ const CO2Statistics = ({ setProjections }) => {
     }
   }, [decadeData]);
 
-  return <svg ref={svgRef} width="800" height="400"></svg>;
+  return <svg ref={svgRef} width="800" height="400" className="center-svg"></svg>;
 };
 
 export default CO2Statistics;
