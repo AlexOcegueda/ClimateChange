@@ -22,7 +22,7 @@ const Earth = () => {
 
 const EarthModel = () => {
   return (
-    <Canvas style={{ height: '400px', width: '600px' }}>
+    <Canvas style={{ height: '400px', width: '500px' }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Earth />

@@ -4,19 +4,44 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import * as d3 from 'd3';
 
+interface SeaLevelData {
+  StationName: string;
+  MSLTrends: number;
+  MSLTrendsFtPerCentury: number;
+  YearRange: number;
+  FirstYear: number;
+  LastYear: number;
+}
+
+interface SummaryStats {
+  avgTrend: number;
+  avgTrendOver100: number;
+  avgTrendUnder100: number;
+  positiveTrends: number;
+  negativeTrends: number;
+  totalStations: number;
+}
+
 const SeaLevelTrends = () => {
-  const [globalSeaLevelData, setGlobalSeaLevelData] = useState([]);
-  const [usSeaLevelData, setUsSeaLevelData] = useState([]);
-  const [combinedSeaLevelData, setCombinedSeaLevelData] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState('');
-  const [summaryStats, setSummaryStats] = useState({ avgTrend: 0, positiveTrends: 0, negativeTrends: 0, totalStations: 0 });
+  const [globalSeaLevelData, setGlobalSeaLevelData] = useState<SeaLevelData[]>([]);
+  const [usSeaLevelData, setUsSeaLevelData] = useState<SeaLevelData[]>([]);
+  const [combinedSeaLevelData, setCombinedSeaLevelData] = useState<SeaLevelData[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<string>('');
+  const [summaryStats, setSummaryStats] = useState<SummaryStats>({
+    avgTrend: 0,
+    avgTrendOver100: 0,
+    avgTrendUnder100: 0,
+    positiveTrends: 0,
+    negativeTrends: 0,
+    totalStations: 0,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [globalSeaLevelRes, usSeaLevelRes] = await Promise.all([
           axios.get('/api/GlobalSeaLevelTrends/'),
-          axios.get('/api/USSeaLevelTrends/')
+          axios.get('/api/USSeaLevelTrends/'),
         ]);
 
         setGlobalSeaLevelData(globalSeaLevelRes.data.data);
@@ -41,18 +66,18 @@ const SeaLevelTrends = () => {
       const negativeTrends = combinedSeaLevelData.filter(d => d.MSLTrends <= 0).length;
       const totalStations = combinedSeaLevelData.length;
 
-      setSummaryStats({ 
-        avgTrendOver100, 
+      setSummaryStats({
+        avgTrendOver100,
         avgTrendUnder100,
         avgTrend,
-        positiveTrends, 
-        negativeTrends, 
-        totalStations 
+        positiveTrends,
+        negativeTrends,
+        totalStations,
       });
     }
   }, [combinedSeaLevelData]);
 
-  const extractCountry = (stationName) => {
+  const extractCountry = (stationName: string): string => {
     const parts = stationName.split(',');
     const countryOrState = parts.length > 1 ? parts[1].trim().toLowerCase() : 'unknown';
     const usStatesAndTerritories = ["al", "ak", "az", "ar", "ca", "co", "ct", "de", "fl", "ga", "hi", "id", "il", "in", "ia", "ks", "ky", "la", "me", "md", "ma", "mi", "mn", "ms", "mo", "mt", "ne", "nv", "nh", "nj", "nm", "ny", "nc", "nd", "oh", "ok", "or", "pa", "ri", "sc", "sd", "tn", "tx", "ut", "vt", "va", "wa", "wv", "wi", "wy", "dc", "pr", "vi"];
@@ -65,7 +90,7 @@ const SeaLevelTrends = () => {
 
   const uniqueCountries = [...new Set(combinedSeaLevelData.map(station => extractCountry(station.StationName)))].map(country => country.charAt(0).toUpperCase() + country.slice(1));
 
-  const StationDetailsTable = ({ country }) => {
+  const StationDetailsTable: React.FC<{ country: string }> = ({ country }) => {
     const standardizedCountry = country.toLowerCase();
     const stations = combinedSeaLevelData.filter(station => extractCountry(station.StationName) === standardizedCountry);
     const avgTrendForCountry = d3.mean(stations, d => d.MSLTrends) || 0;

@@ -5,17 +5,29 @@ import axios from "axios";
 import * as d3 from "d3";
 import CO2Statistics from './CO2Statistics';
 
-const CO2Graphs = () => {
-  const [globalAnnualGrowth, setGlobalAnnualGrowth] = useState([]);
-  const [mloAnnualGrowth, setMloAnnualGrowth] = useState([]);
-  const [globalMonthly, setGlobalMonthly] = useState([]);
-  const [mloMonthly, setMloMonthly] = useState([]);
+interface CO2Data {
+  year: number;
+  ann_inc: number;
+  average: number;
+  month: number;
+}
+
+interface Projection {
+  decade: number;
+  average: number;
+}
+
+const CO2Graphs: React.FC = () => {
+  const [globalAnnualGrowth, setGlobalAnnualGrowth] = useState<CO2Data[]>([]);
+  const [mloAnnualGrowth, setMloAnnualGrowth] = useState<CO2Data[]>([]);
+  const [globalMonthly, setGlobalMonthly] = useState<CO2Data[]>([]);
+  const [mloMonthly, setMloMonthly] = useState<CO2Data[]>([]);
   const [season, setSeason] = useState("Winter");
   const [activeTab, setActiveTab] = useState("annualGrowth");
-  const [projections, setProjections] = useState([]);
+  const [projections, setProjections] = useState<Projection[]>([]);
 
-  const annualGrowthRef = useRef(null);
-  const seasonalRef = useRef(null);
+  const annualGrowthRef = useRef<SVGSVGElement | null>(null);
+  const seasonalRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,19 +58,19 @@ const CO2Graphs = () => {
   }, []);
 
   const drawGraphs = (
-    globalData,
-    mloData,
-    ref,
-    xKey,
-    yKey,
-    yRange,
-    xDomain
+    globalData: CO2Data[],
+    mloData: CO2Data[],
+    ref: React.RefObject<SVGSVGElement>,
+    xKey: keyof CO2Data,
+    yKey: keyof CO2Data,
+    yRange: [number, number],
+    xDomain: [Date, Date]
   ) => {
     const svgElement = ref.current;
     if (!svgElement) return;
 
     const svg = d3.select(svgElement);
-    svg.selectAll("*").remove(); 
+    svg.selectAll("*").remove();
 
     const margin = { top: 20, right: 30, bottom: 30, left: 50 };
     const width = +svg.attr("width") - margin.left - margin.right;
@@ -68,22 +80,19 @@ const CO2Graphs = () => {
 
     const y = d3.scaleLinear().domain(yRange).range([height, 0]);
 
-    const lineGlobal = d3
-      .line()
-      .x((d) => x(new Date(d[xKey], 0, 1)))
-      .y((d) => y(d[yKey]));
+    const lineGlobal = d3.line<CO2Data>()
+      .x(d => x(new Date(d[xKey] as number, 0, 1)))
+      .y(d => y(d[yKey] as number));
 
-    const lineMLO = d3
-      .line()
-      .x((d) => x(new Date(d[xKey], 0, 1)))
-      .y((d) => y(d[yKey]));
+    const lineMLO = d3.line<CO2Data>()
+      .x(d => x(new Date(d[xKey] as number, 0, 1)))
+      .y(d => y(d[yKey] as number));
 
     const g = svg
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const tooltip = d3
-      .select("body")
+    const tooltip = d3.select("body")
       .append("div")
       .style("position", "absolute")
       .style("background-color", "white")
@@ -93,10 +102,10 @@ const CO2Graphs = () => {
       .style("pointer-events", "none")
       .style("display", "none");
 
-    const mouseover = (event, d) => {
-      const year = d[xKey];
-      const globalPoint = globalData.find((p) => p[xKey] === year);
-      const mloPoint = mloData.find((p) => p[xKey] === year);
+    const mouseover = (event: MouseEvent, d: CO2Data) => {
+      const year = d[xKey] as number;
+      const globalPoint = globalData.find(p => p[xKey] === year);
+      const mloPoint = mloData.find(p => p[xKey] === year);
       tooltip
         .html(
           `Year: ${year}<br/>Global: ${
@@ -110,7 +119,7 @@ const CO2Graphs = () => {
         .attr("fill", "yellow");
     };
 
-    const mousemove = (event) => {
+    const mousemove = (event: MouseEvent) => {
       tooltip
         .style("left", event.pageX + 10 + "px")
         .style("top", event.pageY - 20 + "px");
@@ -121,7 +130,6 @@ const CO2Graphs = () => {
       d3.selectAll("circle").attr("r", 3).attr("fill", "purple");
     };
 
-    // Draw global data
     g.append("path")
       .datum(globalData)
       .attr("fill", "none")
@@ -134,16 +142,15 @@ const CO2Graphs = () => {
       .enter()
       .append("circle")
       .attr("class", "dot-global")
-      .attr("cx", (d) => x(new Date(d[xKey], 0, 1)))
-      .attr("cy", (d) => y(d[yKey]))
+      .attr("cx", d => x(new Date(d[xKey] as number, 0, 1)))
+      .attr("cy", d => y(d[yKey] as number))
       .attr("r", 3)
       .attr("fill", "purple")
-      .attr("data-year", (d) => d[xKey])
+      .attr("data-year", d => d[xKey] as number)
       .on("mouseover", mouseover)
       .on("mousemove", mousemove)
       .on("mouseout", mouseout);
 
-    // Draw MLO data
     g.append("path")
       .datum(mloData)
       .attr("fill", "none")
@@ -156,11 +163,11 @@ const CO2Graphs = () => {
       .enter()
       .append("circle")
       .attr("class", "dot-mlo")
-      .attr("cx", (d) => x(new Date(d[xKey], 0, 1)))
-      .attr("cy", (d) => y(d[yKey]))
+      .attr("cx", d => x(new Date(d[xKey] as number, 0, 1)))
+      .attr("cy", d => y(d[yKey] as number))
       .attr("r", 3)
       .attr("fill", "purple")
-      .attr("data-year", (d) => d[xKey])
+      .attr("data-year", d => d[xKey] as number)
       .on("mouseover", mouseover)
       .on("mousemove", mousemove)
       .on("mouseout", mouseout);
@@ -172,7 +179,14 @@ const CO2Graphs = () => {
     g.append("g").call(d3.axisLeft(y));
   };
 
-  const drawSeasonalGraphs = (globalData, mloData, ref, xKey, yKey, yRange) => {
+  const drawSeasonalGraphs = (
+    globalData: CO2Data[],
+    mloData: CO2Data[],
+    ref: React.RefObject<SVGSVGElement>,
+    xKey: keyof CO2Data,
+    yKey: keyof CO2Data,
+    yRange: [number, number]
+  ) => {
     const seasonMonths = {
       Winter: [12, 1, 2],
       Spring: [3, 4, 5],
@@ -180,34 +194,37 @@ const CO2Graphs = () => {
       Fall: [9, 10, 11],
     };
 
-    const filteredGlobalData = [];
-    const filteredMLOData = [];
+    const filteredGlobalData: { year: number; average: number }[] = [];
+    const filteredMLOData: { year: number; average: number }[] = [];
 
     for (let year = 1979; year <= 2023; year++) {
       const globalSeasonData = globalData.filter(
-        (d) => d.year === year && seasonMonths[season].includes(d.month)
+        d => d.year === year && seasonMonths[season].includes(d.month)
       );
       const mloSeasonData = mloData.filter(
-        (d) => d.year === year && seasonMonths[season].includes(d.month)
+        d => d.year === year && seasonMonths[season].includes(d.month)
       );
 
       if (globalSeasonData.length > 0) {
-        const globalAvg = d3.mean(globalSeasonData, (d) => d[yKey]);
+        const globalAvg = d3.mean(globalSeasonData, d => d[yKey] as number);
         filteredGlobalData.push({
           year,
-          average: parseFloat(globalAvg.toFixed(3)),
+          average: parseFloat((globalAvg ?? 0).toFixed(3)),
         });
       }
 
       if (mloSeasonData.length > 0) {
-        const mloAvg = d3.mean(mloSeasonData, (d) => d[yKey]);
-        filteredMLOData.push({ year, average: parseFloat(mloAvg.toFixed(3)) });
+        const mloAvg = d3.mean(mloSeasonData, d => d[yKey] as number);
+        filteredMLOData.push({
+          year,
+          average: parseFloat((mloAvg ?? 0).toFixed(3)),
+        });
       }
     }
 
     drawGraphs(
-      filteredGlobalData,
-      filteredMLOData,
+      filteredGlobalData as CO2Data[],
+      filteredMLOData as CO2Data[],
       ref,
       "year",
       "average",
@@ -265,15 +282,15 @@ const CO2Graphs = () => {
             throughout the years starting with a low .5 ppm rising all the way up to a high of 
             ~2.8 with Mauna Loa reaching over 3 in 2023.
           </p>
-            <p className="text-left">
-              Judging off the growth rate of each decade and using a linear regression model, 
-              I predict that it will increase to{' '}
-              {projections.find(p => p.decade === 2020)?.average} ppm in the 2020s,{' '}
-              {projections.find(p => p.decade === 2030)?.average} ppm in the 2030s,{' '}
-              {projections.find(p => p.decade === 2040)?.average} ppm in the 2040s, and{' '}
-              {projections.find(p => p.decade === 2050)?.average} ppm in the 2050s. 
-              Below is a bar graph of the average growth rate for each decade in ppm.
-            </p>
+          <p className="text-left">
+            Judging off the growth rate of each decade and using a linear regression model, 
+            I predict that it will increase to{' '}
+            {projections.find(p => p.decade === 2020)?.average} ppm in the 2020s,{' '}
+            {projections.find(p => p.decade === 2030)?.average} ppm in the 2030s,{' '}
+            {projections.find(p => p.decade === 2040)?.average} ppm in the 2040s, and{' '}
+            {projections.find(p => p.decade === 2050)?.average} ppm in the 2050s. 
+            Below is a bar graph of the average growth rate for each decade in ppm.
+          </p>
           <CO2Statistics setProjections={setProjections} />
         </>
       );
@@ -349,6 +366,7 @@ const CO2Graphs = () => {
             id="annual-growth-svg"
             width="800"
             height="400"
+            className="center-svg"
           ></svg>
           <div className="legend">
             <div>
@@ -367,6 +385,7 @@ const CO2Graphs = () => {
             id="seasonal-svg"
             width="800"
             height="400"
+            className="center-svg"
           ></svg>
           <div className="legend">
             <div>
@@ -388,6 +407,11 @@ const CO2Graphs = () => {
         .legend div {
           margin: 0 15px;
           font-size: 14px;
+        }
+        .center-svg {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
       `}</style>
     </div>
