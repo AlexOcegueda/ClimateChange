@@ -25,9 +25,22 @@ const CO2Graphs: React.FC = () => {
   const [season, setSeason] = useState("Winter");
   const [activeTab, setActiveTab] = useState("annualGrowth");
   const [projections, setProjections] = useState<Projection[]>([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const annualGrowthRef = useRef<SVGSVGElement | null>(null);
   const seasonalRef = useRef<SVGSVGElement | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -269,6 +282,7 @@ const CO2Graphs: React.FC = () => {
     globalMonthly,
     mloMonthly,
     season,
+    windowWidth
   ]);
 
   const renderDescription = () => {
@@ -364,8 +378,8 @@ const CO2Graphs: React.FC = () => {
           <svg
             ref={annualGrowthRef}
             id="annual-growth-svg"
-            width="800"
-            height="400"
+            width={windowWidth < 820 ? windowWidth - 40 : 800}
+            height={windowWidth < 820 ? (windowWidth - 40) * 0.5 : 400}
             className="center-svg"
           ></svg>
           <div className="legend">
@@ -383,8 +397,8 @@ const CO2Graphs: React.FC = () => {
           <svg
             ref={seasonalRef}
             id="seasonal-svg"
-            width="800"
-            height="400"
+            width={windowWidth < 820 ? windowWidth - 40 : 800}
+            height={windowWidth < 820 ? (windowWidth - 40) * 0.5 : 400}
             className="center-svg"
           ></svg>
           <div className="legend">

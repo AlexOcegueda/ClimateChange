@@ -11,7 +11,7 @@ export default function NavBar() {
         <Link href="/" className="text-lg font-semibold text-gray-900">home</Link>
       </nav>
       <nav className="space-x-4 flex">
-        <Link href="/about" className="nav-link text-lg font-semibold text-white">about us</Link>
+        <Link href="/about" className="nav-link text-lg font-semibold text-white">about</Link>
         <Link href="/locations" className="nav-link text-lg font-semibold text-white">github</Link>
         <Link href="/contact" className="nav-link text-lg font-semibold text-white">contact</Link>
       </nav>

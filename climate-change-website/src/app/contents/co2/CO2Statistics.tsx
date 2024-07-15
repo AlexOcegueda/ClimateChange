@@ -16,6 +16,19 @@ interface CO2StatisticsProps {
 const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
   const [decadeData, setDecadeData] = useState<DecadeData[]>([]);
   const svgRef = useRef<SVGSVGElement | null>(null);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchDecadeData = async () => {
@@ -131,9 +144,25 @@ const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
         .on("mousemove", mousemove)
         .on("mouseout", mouseout);
     }
-  }, [decadeData]);
+  }, [decadeData, windowWidth]);
 
-  return <svg ref={svgRef} width="800" height="400" className="center-svg"></svg>;
+  return (
+    <div>
+      <svg
+        ref={svgRef}
+        width={windowWidth < 820 ? windowWidth - 40 : 800}
+        height={windowWidth < 820 ? (windowWidth - 40) * 0.5 : 400}
+        className="center-svg"
+      ></svg>
+      <style jsx>{`
+        .center-svg {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      `}</style>
+    </div>
+  );
 };
 
 export default CO2Statistics;

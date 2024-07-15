@@ -3,20 +3,21 @@
 import React from 'react';
 import NavBar from '../../../components/NavBar';
 import CO2Graphs from './CO2Graphs.tsx';
+import FooterNav from '../../../components/FooterNav';
 
 const CO2ConcentrationsPage = () => {
   return (
-    <div className="bg-[#b2c3ee] mb-16">
+    <div className="flex flex-col min-h-screen bg-[#b2c3ee]">
       <NavBar />
-      <div className="container mx-auto text-center">
+      <div className="w-full max-w-full mx-auto text-center flex-grow">
         <div className="relative flex justify-center mb-8">
-          <div className="ml-4 text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white p-4">02</div>
-          <div className="absolute left-0 right-0 bg-white h-full -z-10" style={{ height: '6rem' }}></div>
-          <h1 className="ml-4 text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">CO2 CONCENTRATIONS</h1>
+          <div className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white p-4">03</div>
+          <div className="absolute left-0 right-0 bg-white h-full -z-10" style={{ height: '3rem', sm: { height: '4rem' }, md: { height: '6rem' }}}></div>
+          <h1 className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">CO2</h1>
         </div>
-        <main className="bg-white p-8 mx-auto shadow-lg rounded-lg" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
+        <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
           <blockquote className="text-3xl text-gray-500 mb-8">
-            "How have CO2 concentrations changed over the past century?"
+            "How has CO2 concentrations changed over the past century?"
           </blockquote>
           <h2 className="text-2xl font-bold mb-4">Why CO2 Concentrations?</h2>
           <p className="text-left text-lg mb-4">
@@ -29,6 +30,7 @@ const CO2ConcentrationsPage = () => {
           <CO2Graphs />
         </main>
       </div>
+      <FooterNav />
     </div>
   );
 };

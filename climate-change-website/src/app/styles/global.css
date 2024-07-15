@@ -27,6 +27,12 @@ body {
   margin-left: .8rem;
 }
 
+@media (max-width: 400px) {
+  .nav-link::after {
+    content: '';
+  }
+}
+
 .nav-link:last-child::after {
   content: none;
 }
