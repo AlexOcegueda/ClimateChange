@@ -18,6 +18,5 @@
       "src": "/api/co2statistics",
       "dest": "/api/co2statistics/route.ts"
     }
-  ],
-  "files": ["database/climate_change.db"]
+  ]
 }
