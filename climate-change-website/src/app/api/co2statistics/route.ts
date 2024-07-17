@@ -13,7 +13,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
 });
 
-export async function GET() {
+export async function GET(): Promise<Response> {
   return new Promise((resolve, reject) => {
     db.all(`
       SELECT 
