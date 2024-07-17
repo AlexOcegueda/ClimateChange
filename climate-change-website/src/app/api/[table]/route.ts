@@ -5,6 +5,8 @@ import path from 'path';
 const isVercel = process.env.VERCEL_ENV !== undefined;
 const dbPath = isVercel ? path.join(process.cwd(), 'database/climate_change.db') : path.join(process.cwd(), '../database/climate_change.db');
 
+console.log("Database path: ", dbPath);
+
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error("Database connection failed: ", err);
@@ -23,8 +25,10 @@ export async function GET(request: Request, { params }: { params: { table: strin
     return new Promise((resolve) => {
         db.all(`SELECT * FROM ${table}`, [], (err, rows) => {
             if (err) {
+                console.error("Error fetching data: ", err);
                 resolve(NextResponse.json({ error: err.message }, { status: 500 }));
             } else {
+                console.log("Data fetched successfully: ", rows);
                 resolve(NextResponse.json({ data: rows }, { status: 200 }));
             }
         });
