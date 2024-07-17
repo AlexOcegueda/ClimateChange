@@ -2,10 +2,16 @@ import { NextResponse } from 'next/server';
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
-const dbPath = path.join(process.cwd(), '../database/climate_change.db');
-const db = new sqlite3.Database(dbPath);
+const isVercel = process.env.VERCEL_ENV !== undefined;
+const dbPath = isVercel ? path.join(process.cwd(), 'database/climate_change.db') : path.join(process.cwd(), '../database/climate_change.db');
 
-console.log("IN")
+const db = new sqlite3.Database(dbPath, (err) => {
+    if (err) {
+        console.error("Database connection failed: ", err);
+    } else {
+        console.log("Connected to the database.");
+    }
+});
 
 export async function GET() {
   return new Promise((resolve, reject) => {

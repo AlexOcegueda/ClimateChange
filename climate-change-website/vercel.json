@@ -1,0 +1,22 @@
+{
+  "builds": [
+    {
+      "src": "src/app/api/[table]/route.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/app/api/co2statistics/route.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/[table]/route.ts"
+    },
+    {
+      "src": "/api/co2statistics",
+      "dest": "/api/co2statistics/route.ts"
+    }
+  ]
+}
