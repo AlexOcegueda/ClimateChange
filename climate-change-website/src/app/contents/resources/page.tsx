@@ -15,7 +15,7 @@ const ResourcesPage = () => {
           <h1 className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">RESOURCES</h1>
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
-          <h2 className="text-2xl font-bold mb-4">Datasets</h2>
+          <h2 id="datasets" className="text-2xl font-bold mb-4">Datasets</h2>
           <h3 className="text-1xl text-left font-bold mb-4">Historical Temperature Records</h3>
           <p className="text-left text-lg mb-4"> 
             <a className="text-blue-500" href="https://data.giss.nasa.gov/gistemp/">[NASA GISS Temperature Data]</a><br />
@@ -30,7 +30,7 @@ const ResourcesPage = () => {
             <a className="text-blue-500" href="https://tidesandcurrents.noaa.gov/sltrends/mslGlobalTrendsTable.html">[NOAA Global Mean Sea Level Trends]</a><br />
             <a className="text-blue-500" href="https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html">[NOAA US Mean Sea Level Trends]</a>
           </p>
-          <h2 className="text-2xl font-bold mb-4">Citations</h2>
+          <h2 id="citations" className="text-2xl font-bold mb-4">Citations</h2>
           <p className="text-left text-lg mb-4">
             Special thanks to the data providers for making their data publicly available:
           </p>

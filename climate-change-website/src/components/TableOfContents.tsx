@@ -21,8 +21,8 @@ const TableOfContents = () => {
                 <Link href="/contents/introduction">INTRODUCTION</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/introduction" className="block mb-1">1.1 What's Climate Change?</Link>
-                <Link href="/contents/introduction" className="block">1.2 Global Warming?</Link>
+                <Link href="/contents/introduction#whats-climate-change" className="block mb-1">1.1 What's Climate Change?</Link>
+                <Link href="/contents/introduction#global-warming" className="block">1.2 Global Warming?</Link>
               </div>
             </div>
             <div className="mr-2">
@@ -33,8 +33,8 @@ const TableOfContents = () => {
                 <Link href="/contents/sealevels">SEA LEVELS</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/sealevels" className="block">2.1 Why Sea Levels Trends?</Link>
-                <Link href="/contents/sealevels" className="block mb-1">2.2 Global Sea Level Trends</Link>
+                <Link href="/contents/sealevels#why-sea-levels" className="block">2.1 Why Sea Levels Trends?</Link>
+                <Link href="/contents/sealevels#global-sea-level" className="block mb-1">2.2 Global Sea Level Trends</Link>
               </div>
             </div>
             <div className="mr-2">
@@ -45,8 +45,8 @@ const TableOfContents = () => {
                 <Link href="/contents/co2">CO2</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/co2" className="block mb-1">3.1 Why CO2 Concentrations?</Link>
-                <Link href="/contents/co2" className="block mb-1">3.2 Global vs Mauna Loa</Link>
+                <Link href="/contents/co2#why-co2" className="block mb-1">3.1 Why CO2 Concentrations?</Link>
+                <Link href="/contents/co2#global-mauna-loa" className="block mb-1">3.2 Global vs Mauna Loa</Link>
               </div>
             </div>
             <div className="mr-2">
@@ -57,7 +57,7 @@ const TableOfContents = () => {
                 <Link href="/contents/temperature">TEMPERATURE</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/temperature" className="block mb-1">4.1 Why Temperature Anomalies?</Link>
+                <Link href="/contents/temperature#why-land-ocean-temp" className="block mb-1">4.1 Why Temperature Anomalies?</Link>
               </div>
             </div>
             <div className="mr-2">
@@ -68,8 +68,8 @@ const TableOfContents = () => {
                 <Link href="/contents/project">PROJECT</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/project" className="block mb-1">5.1 Github</Link>
-                <Link href="/contents/project" className="block">5.2 Database</Link>
+                <Link href="/contents/project#github" className="block mb-1">5.1 Github</Link>
+                <Link href="/contents/project#database" className="block">5.2 Database</Link>
               </div>
             </div>
             <div className="mr-2">
@@ -80,8 +80,8 @@ const TableOfContents = () => {
                 <Link href="/contents/resources">RESOURCES</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/resources" className="block mb-1">6.1 Datasets</Link>
-                <Link href="/contents/resources" className="block">6.2 Citations</Link>
+                <Link href="/contents/resources#datasets" className="block mb-1">6.1 Datasets</Link>
+                <Link href="/contents/resources#citations" className="block">6.2 Citations</Link>
               </div>
             </div>
           </div>

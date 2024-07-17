@@ -15,11 +15,11 @@ const ProjectPage = () => {
           <h1 className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">PROJECTS</h1>
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
-          <h2 className="text-2xl font-bold mb-4">Github</h2>
+          <h2 id="github" className="text-2xl font-bold mb-4">Github</h2>
           <p className="text-left text-lg mb-4"> 
             You can view the code for the this website, database, and dataset processing on my Github page <a className="text-blue-500" href="https://github.com/AlexOcegueda/ClimateChange/">here</a>.
           </p>
-          <h2 className="text-2xl font-bold mb-4">Database</h2>
+          <h2 id="database" className="text-2xl font-bold mb-4">Database</h2>
           <p className="text-left text-lg mb-4">
             I used SQLite for the database and I created a GUI for it using tKinter. If you'd like to learn more about the database
             and how to access it, use it in your project, or modify it yourself read the <a className="text-blue-500" href="https://github.com/AlexOcegueda/ClimateChange/blob/master/ReadMe.md">ReadMe</a> on my github  

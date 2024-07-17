@@ -15,7 +15,7 @@ const IntroductionPage = () => {
           <h1 className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">INTRODUCTION</h1>
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '61rem' }}>
-          <h2 className="text-2xl font-bold mb-4">What is Climate Change?</h2>
+          <h2 id="whats-climate-change" className="text-2xl font-bold mb-4">What is Climate Change?</h2>
           <p className="text-left text-lg">
             Climate change is all about big shifts in global temps, weather patterns, and rising sea levels over time. 
             These aren't the only things it affects as Climate Change affects a wide range of things on Earth.
@@ -24,7 +24,7 @@ const IntroductionPage = () => {
             why it’s happening, and how it affects us is important if we want to tackle it and adjust to 
             what's coming our way.
           </p>
-          <h2 className="text-2xl font-bold mb-4">What happened to Global Warming?</h2>
+          <h2 id="global-warming" className="text-2xl font-bold mb-4">What happened to Global Warming?</h2>
           <p className="text-left text-lg">
             A lot of people mix up global warming and climate change, but they’re not the same thing. 
             Global warming is just about the Earth getting hotter, while climate change is a bigger deal that covers 

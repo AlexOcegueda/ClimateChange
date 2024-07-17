@@ -130,7 +130,7 @@ const SeaLevelTrends = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Global Sea Level Trends</h2>
+      <h2 id="global-sea-level" className="text-2xl font-bold mb-4">Global Sea Level Trends</h2>
       <h3 className="text-2xl font-bold mb-4">Summary Statistics</h3>
       {summaryStats.totalStations > 0 ? (
         <>

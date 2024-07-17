@@ -19,15 +19,42 @@ const CO2ConcentrationsPage = () => {
           <blockquote className="text-3xl text-gray-500 mb-8">
             "How has CO2 concentrations changed over the past century?"
           </blockquote>
-          <h2 className="text-2xl font-bold mb-4">Why CO2 Concentrations?</h2>
+          <h2 id="why-co2" className="text-2xl font-bold mb-4">Why CO2 Concentrations?</h2>
           <p className="text-left text-lg mb-4">
-            This question addresses a critical aspect of climate change that directly impacts ecosystems, weather patterns, and humans. 
-            My database includes comprehensive data on global sea levels, CO2 concentrations (both globally and regionally), and temperature anomalies 
-            from trustworthy websites like NOAA and NASA (Sources are at the bottom of the page). 
-            Understanding the correlations between CO2 levels, sea levels, and temperature anomalies can provide insights into the drivers of climate change.
+            &emsp; &emsp; CO2 levels in the atmosphere have risen significantly due to human activities like burning fossil fuels 
+            (coal, oil, and natural gas), deforestation, and industrial processes. Monitoring CO2 helps scientists directly 
+            link these activities to climate change. <br />
+            &emsp; &emsp; CO2 is a major greenhouse gas, meaning it traps heat in the Earth’s atmosphere. This trapped heat leads to 
+            global warming, which causes a wide range of environmental impacts, including melting ice caps, rising sea levels, 
+            and more frequent extreme weather events.
+            High CO2 levels can also trigger feedback loops that makes matters worse for climate change. For instance, as temperatures rise, 
+            permafrost melts, releasing more CO2 and methane into the atmosphere, which in turn leads to even higher temperatures.
+            CO2 is absorbed by the oceans, where it forms carbonic acid. This process, known as ocean acidification, can harm marine
+            life, particularly organisms with calcium carbonate shells or skeletons, like corals and some shellfish. 
+            This impacts biodiversity and the health of marine ecosystems.
+            <br /> &emsp; &emsp; Lastly, tracking CO2 concentrations informs climate policy and mitigation strategies. Accurate data on CO2 levels help governments 
+            and organizations set targets for reducing emissions, develop renewable energy sources, and implement carbon capture technologies .
+            Also, by studying ice cores and other geological records, scientists have found that current CO2 levels are higher 
+            than they’ve been in at least 800,000 years. This historical context underscores the urgency in creating plans
+            to slow down the effects of climate change.
           </p>
-          <h2 className="text-2xl font-bold mb-4">Global vs Mauna Loa CO2 Concentrations</h2>
+          <h2 id="global-mauna-loa" className="text-2xl font-bold mb-4">Global vs Mauna Loa CO2 Concentrations</h2>
           <CO2Graphs />
+          <div className="mt-8 text-left">
+            <h3 className="text-xl font-bold mb-2">Sources</h3>
+            <ul className="list-disc list-inside text-lg text-gray-700">
+              <li>
+                <a href="https://climate.nasa.gov/vital-signs/carbon-dioxide/?intent=121" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                  NASA Climate Change: Vital Signs of the Planet
+                </a>
+              </li>
+              <li>
+                <a href="https://wesr.unep.org/climate/essential-climate-variables-ecv/atmospheric-co2-concentration" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                  UNEP on Atmospheric CO2 Concentration
+                </a>
+              </li>
+            </ul>
+          </div>
         </main>
       </div>
       <FooterNav />

@@ -290,14 +290,14 @@ const CO2Graphs: React.FC = () => {
       return (
         <>
           <p className="text-left">
-            This graph shows the annual growth rate of CO2 concentrations in PPM. It
+            &emsp; &emsp;This graph shows the annual growth rate of CO2 concentrations in PPM. It
             highlights the changes in CO2 levels globally and at Mauna Loa. From the graph we can see 
             that both Mauna Loa and global growth rates for CO2 concentrations have been steadily increasing 
             throughout the years starting with a low .5 ppm rising all the way up to a high of 
             ~2.8 with Mauna Loa reaching over 3 in 2023.
           </p>
           <p className="text-left">
-            Judging off the growth rate of each decade and using a linear regression model, 
+            &emsp; &emsp;Judging off the growth rate of each decade and using a linear regression model, 
             I predict that it will increase to{' '}
             {projections.find(p => p.decade === 2020)?.average} ppm in the 2020s,{' '}
             {projections.find(p => p.decade === 2030)?.average} ppm in the 2030s,{' '}
