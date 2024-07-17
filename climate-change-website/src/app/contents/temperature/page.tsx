@@ -17,13 +17,13 @@ const TemperaturePage = () => {
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
           <blockquote className="text-3xl text-gray-500 mb-8">
-            "How have the land-ocean temperature anomalies changed globally, in the Northern Hemisphere, 
-            and in the Southern Hemisphere over the past century, and what significant trends can be observed from these changes?"
+            &quot;How have the land-ocean temperature anomalies changed globally, in the Northern Hemisphere, 
+            and in the Southern Hemisphere over the past century, and what significant trends can be observed from these changes?&quot;
           </blockquote>
           <h2 id="why-land-ocean-temp" className="text-2xl font-bold mb-4">Why Land-Ocean Temperature Anomalies?</h2>
           <p className="text-left text-lg mb-4">
               &emsp;&emsp;Tracking land-ocean temperature anomalies is important for understanding how climate change is affecting our planet. 
-              By keeping an eye on global temperature changes, we get a big picture of how our climate is shifting and how well we're 
+              By keeping an eye on global temperature changes, we get a big picture of how our climate is shifting and how well we&apos;re 
               doing in reducing greenhouse gas emissions. 
               Looking at different regions, like the northern and southern hemispheres, helps us see unique patterns. 
               The northern hemisphere, with more land, heats up faster than the southern, leading to more noticeable 

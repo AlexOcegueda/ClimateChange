@@ -17,7 +17,7 @@ const SeaLevelsTrendsPage = () => {
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
           <blockquote className="text-3xl text-gray-500 mb-8">
-            "How has global sea levels changed over the past century"
+            &quot;How has global sea levels changed over the past century&quot;
           </blockquote>
           <h2 id="why-sea-levels" className="text-2xl font-bold mb-4">Why Sea Levels?</h2>
           <p className="text-left text-lg mb-4">

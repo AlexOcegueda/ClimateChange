@@ -21,7 +21,7 @@ const TableOfContents = () => {
                 <Link href="/contents/introduction">INTRODUCTION</Link>
               </div>
               <div className="text-[0.875rem] md:text-[1rem] text-left">
-                <Link href="/contents/introduction#whats-climate-change" className="block mb-1">1.1 What's Climate Change?</Link>
+                <Link href="/contents/introduction#whats-climate-change" className="block mb-1">1.1 What&apos;s Climate Change?</Link>
                 <Link href="/contents/introduction#global-warming" className="block">1.2 Global Warming?</Link>
               </div>
             </div>

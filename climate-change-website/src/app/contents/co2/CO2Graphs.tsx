@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import axios from "axios";
 import * as d3 from "d3";
 import CO2Statistics from './CO2Statistics';
@@ -70,7 +70,7 @@ const CO2Graphs: React.FC = () => {
     fetchData();
   }, []);
 
-  const drawGraphs = (
+  const drawGraphs = useCallback((
     globalData: CO2Data[],
     mloData: CO2Data[],
     ref: React.RefObject<SVGSVGElement>,
@@ -190,9 +190,9 @@ const CO2Graphs: React.FC = () => {
       .call(d3.axisBottom(x));
 
     g.append("g").call(d3.axisLeft(y));
-  };
+  }, []);
 
-  const drawSeasonalGraphs = (
+  const drawSeasonalGraphs = useCallback((
     globalData: CO2Data[],
     mloData: CO2Data[],
     ref: React.RefObject<SVGSVGElement>,
@@ -244,7 +244,7 @@ const CO2Graphs: React.FC = () => {
       yRange,
       [new Date(1979, 0, 1), new Date(2023, 11, 31)]
     );
-  };
+  }, [drawGraphs, season]);
 
   useEffect(() => {
     if (
@@ -282,7 +282,9 @@ const CO2Graphs: React.FC = () => {
     globalMonthly,
     mloMonthly,
     season,
-    windowWidth
+    windowWidth,
+    drawGraphs,
+    drawSeasonalGraphs
   ]);
 
   const renderDescription = () => {
