@@ -98,37 +98,39 @@ const SeaLevelTrends = () => {
     return (
       <div>
         <p className="text-xl font-bold mb-4">Average Sea Level Trend for {country}: {avgTrendForCountry.toFixed(2)} mm/yr</p>
-        <table className="table-auto w-full mt-4">
-          <thead>
-            <tr>
-              <th className="px-4 py-2">Station Name</th>
-              <th className="px-4 py-2">MSL Trend (mm/yr)</th>
-              <th className="px-4 py-2">MSL Trend (Ft Per Century)</th>
-              <th className="px-4 py-2">Years Collected</th>
-              <th className="px-4 py-2">Start Year</th>
-              <th className="px-4 py-2">End Year</th>
-            </tr>
-          </thead>
-          <tbody>
-            {stations.map(station => (
-              <tr key={station.StationName}>
-                <td className="border px-4 py-2">{station.StationName.split(',')[0]}</td>
-                <td className="border px-4 py-2">{station.MSLTrends}</td>
-                <td className="border px-4 py-2">{station.MSLTrendsFtPerCentury}</td>
-                <td className="border px-4 py-2">{station.YearRange}</td>
-                <td className="border px-4 py-2">{station.FirstYear}</td>
-                <td className="border px-4 py-2">{station.LastYear}</td>
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full mt-4">
+            <thead>
+              <tr>
+                <th className="px-4 py-2">Station Name</th>
+                <th className="px-4 py-2">MSL Trend (mm/yr)</th>
+                <th className="px-4 py-2">MSL Trend (Ft Per Century)</th>
+                <th className="px-4 py-2">Years Collected</th>
+                <th className="px-4 py-2">Start Year</th>
+                <th className="px-4 py-2">End Year</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {stations.map(station => (
+                <tr key={station.StationName}>
+                  <td className="border px-4 py-2">{station.StationName.split(',')[0]}</td>
+                  <td className="border px-4 py-2">{station.MSLTrends}</td>
+                  <td className="border px-4 py-2">{station.MSLTrendsFtPerCentury}</td>
+                  <td className="border px-4 py-2">{station.YearRange}</td>
+                  <td className="border px-4 py-2">{station.FirstYear}</td>
+                  <td className="border px-4 py-2">{station.LastYear}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   };
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Global Sea Level Trends</h2>
+      <h2 id="global-sea-level" className="text-2xl font-bold mb-4">Global Sea Level Trends</h2>
       <h3 className="text-2xl font-bold mb-4">Summary Statistics</h3>
       {summaryStats.totalStations > 0 ? (
         <>

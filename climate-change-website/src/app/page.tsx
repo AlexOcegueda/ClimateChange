@@ -1,25 +1,43 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar';
 import EarthModel from '../components/EarthModel';
 import TableOfContents from '../components/TableOfContents';
 
 export default function HomePage() {
   const [scrollY, setScrollY] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const tableOfContentsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
+  const handleLearnMoreClick = () => {
+    if (tableOfContentsRef.current) {
+      tableOfContentsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const earthStyle = {
-    transform: `translate(${scrollY * -1.3}px, ${scrollY * 1.15}px)`,
+    transform: windowWidth > 1250 ? `translate(${scrollY * -1.1}px, ${scrollY * 1.1}px)` : 'none',
     transition: 'transform 0.1s linear',
   };
 
@@ -28,13 +46,18 @@ export default function HomePage() {
       <div className="relative bg-gradient-to-b from-[#8fa5d5] via-[#8fa5d5] to-[#b2c3ee]">
         <NavBar />
         <main className="flex flex-col items-center justify-center py-20 relative z-10">
-          <div className="flex items-center justify-between w-full max-w-6xl">
-            <div>
+          <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl">
+            <div className="ml-4 text-center md:text-left mb-8 md:mb-0">
               <h1 className="text-6xl font-bold text-gray-900 mb-6">Climate Change</h1>
-              <p className="text-lg text-gray-700 max-w-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto md:mx-0">
+                The first step to fighting climate change is to become educated in climate change.
               </p>
-              <button className="mt-6 px-4 py-2 bg-orange-500 text-white rounded-full font-semibold shadow-md">Learn More</button>
+              <button
+                onClick={handleLearnMoreClick}
+                className="mt-6 px-4 py-2 bg-orange-500 text-white rounded-full font-semibold shadow-md"
+              >
+                Learn More
+              </button>
             </div>
             <div style={earthStyle}>
               <EarthModel />
@@ -55,7 +78,9 @@ export default function HomePage() {
           </svg>
         </div>
       </div>
-      <TableOfContents />
+      <div ref={tableOfContentsRef}>
+        <TableOfContents />
+      </div>
       <div className="absolute inset-0 overflow-hidden">
         <svg
           className="absolute top-0 w-full"
