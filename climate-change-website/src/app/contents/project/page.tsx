@@ -21,7 +21,7 @@ const ProjectPage = () => {
           </p>
           <h2 id="database" className="text-2xl font-bold mb-4">Database</h2>
           <p className="text-left text-lg mb-4">
-            I used SQLite for the database and I created a GUI for it using tKinter. If you'd like to learn more about the database
+            I used SQLite for the database and I created a GUI for it using tKinter. If you&apos;d like to learn more about the database
             and how to access it, use it in your project, or modify it yourself read the <a className="text-blue-500" href="https://github.com/AlexOcegueda/ClimateChange/blob/master/ReadMe.md">ReadMe</a> on my github  
           </p>
           <p className="text-left text-lg mb-4">

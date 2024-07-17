@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import axios from "axios";
 import * as d3 from "d3";
 
@@ -45,13 +45,7 @@ const LandOceanTemperatureAnomalies: React.FC = () => {
     })).filter(d => !isNaN(d.anomaly));
   };
 
-  useEffect(() => {
-    if (globalData.length > 0 && nhData.length > 0 && shData.length > 0) {
-      drawGraph(globalData, nhData, shData);
-    }
-  }, [globalData, nhData, shData, showGlobal, showNH, showSH]);
-
-  const drawGraph = (globalData: TemperatureData[], nhData: TemperatureData[], shData: TemperatureData[]) => {
+  const drawGraph = useCallback((globalData: TemperatureData[], nhData: TemperatureData[], shData: TemperatureData[]) => {
     const svgElement = svgRef.current;
     if (!svgElement) return;
 
@@ -236,7 +230,13 @@ const LandOceanTemperatureAnomalies: React.FC = () => {
         .style("font-size", "12px")
         .attr("alignment-baseline", "middle");
     }
-  };
+  }, [showGlobal, showNH, showSH]);
+
+  useEffect(() => {
+    if (globalData.length > 0 && nhData.length > 0 && shData.length > 0) {
+      drawGraph(globalData, nhData, shData);
+    }
+  }, [globalData, nhData, shData, showGlobal, showNH, showSH, drawGraph]);
 
   return (
     <div>

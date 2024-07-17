@@ -18,20 +18,20 @@ const IntroductionPage = () => {
           <h2 id="whats-climate-change" className="text-2xl font-bold mb-4">What is Climate Change?</h2>
           <p className="text-left text-lg">
             Climate change is all about big shifts in global temps, weather patterns, and rising sea levels over time. 
-            These aren't the only things it affects as Climate Change affects a wide range of things on Earth.
+            These aren&apos;t the only things it affects as Climate Change affects a wide range of things on Earth.
             Climate change can happen naturally, but science says that humans are now speeding things up with all 
-            the greenhouse gases we’re pumping into the air. Getting a handle on what climate change is, 
-            why it’s happening, and how it affects us is important if we want to tackle it and adjust to 
-            what's coming our way.
+            the greenhouse gases we&apos;re pumping into the air. Getting a handle on what climate change is, 
+            why it&apos;s happening, and how it affects us is important if we want to tackle it and adjust to 
+            what&apos;s coming our way.
           </p>
           <h2 id="global-warming" className="text-2xl font-bold mb-4">What happened to Global Warming?</h2>
           <p className="text-left text-lg">
-            A lot of people mix up global warming and climate change, but they’re not the same thing. 
+            A lot of people mix up global warming and climate change, but they&apos;re not the same thing. 
             Global warming is just about the Earth getting hotter, while climate change is a bigger deal that covers 
             all kinds of changes happening to our planet. Sure, both are caused by us burning fossil fuels, 
             but climate change also includes stuff like melting glaciers, rising sea levels, and 
             even changes in when flowers bloom. So, think of global warming as just one piece of 
-            the climate change puzzle. Below is a cool video I found on NASA's page where they talk about
+            the climate change puzzle. Below is a cool video I found on NASA&apos;s page where they talk about
             the differences in Climate Change vs Global Warming. The video shows the earth and sections that have
             warmed up over time from 1880 - 2022.
           </p>
@@ -46,7 +46,7 @@ const IntroductionPage = () => {
               allowFullScreen
             ></iframe>
             <p className="text-sm text-gray-500 mt-4">
-              "Global temperature rise from 1880 to 2022. Higher-than-normal temperatures are shown in red and lower-than-normal temperatures are shown in blue. Each frame represents global temperature anomalies (changes) averaged over the five years previous to that particular year. NASA Goddard Space Flight Center/NASA Scientific Visualization Studio/NASA Goddard Institute for Space Studies"
+              &quot;Global temperature rise from 1880 to 2022. Higher-than-normal temperatures are shown in red and lower-than-normal temperatures are shown in blue. Each frame represents global temperature anomalies (changes) averaged over the five years previous to that particular year. NASA Goddard Space Flight Center/NASA Scientific Visualization Studio/NASA Goddard Institute for Space Studies&quot;
             </p>
           </div>
           <div className="mt-8 text-left">

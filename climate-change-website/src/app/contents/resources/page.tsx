@@ -34,16 +34,16 @@ const ResourcesPage = () => {
           <p className="text-left text-lg mb-4">
             Special thanks to the data providers for making their data publicly available:
           </p>
-          <h3 className="text-1xl text-left font-bold mb-4">NASA's Goddard Institute for Space Studies</h3>   
+          <h3 className="text-1xl text-left font-bold mb-4">NASA&apos;s Goddard Institute for Space Studies</h3>   
           <p className="text-left">
-            "These data are made freely available to the public and the scientific community in the belief that their wide dissemination will lead to greater understanding and new scientific insights."<br /><br />
+            &quot;These data are made freely available to the public and the scientific community in the belief that their wide dissemination will lead to greater understanding and new scientific insights.&quot;<br /><br />
             GISTEMP Team, 2024: GISS Surface Temperature Analysis (GISTEMP), version 4. NASA Goddard Institute for Space Studies. Dataset accessed 2024-06-17 at <a className="text-blue-500" href="https://data.giss.nasa.gov/gistemp/">https://data.giss.nasa.gov/gistemp/</a>.<br /><br />
             Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522. Dataset accessed 2024-06-17 at <a className="text-blue-500" href="https://data.giss.nasa.gov/gistemp/">https://data.giss.nasa.gov/gistemp/</a>.
             <br /><br />
           </p>
           <h3 className="text-1xl text-left font-bold mb-4">NOAA GML</h3> 
           <p className="text-left">
-            "These data are made freely available to the public and the scientific community."<br /><br /> 
+            &quot;These data are made freely available to the public and the scientific community.&quot;<br /><br /> 
             US Department of Commerce, N. (2005, October 1). Global Monitoring Laboratory - Carbon Cycle Greenhouse Gases. GML. <a className="text-blue-500" href="https://gml.noaa.gov/ccgg/trends/">https://gml.noaa.gov/ccgg/trends/</a><br /><br />
             <a className="text-blue-500" href="https://scrippsco2.ucsd.edu/">Scripps Institution of Oceanography</a>
             <br /><br /> 

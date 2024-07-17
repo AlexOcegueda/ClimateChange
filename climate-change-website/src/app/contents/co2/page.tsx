@@ -17,14 +17,14 @@ const CO2ConcentrationsPage = () => {
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
           <blockquote className="text-3xl text-gray-500 mb-8">
-            "How has CO2 concentrations changed over the past century?"
+            &quot;How has CO2 concentrations changed over the past century?&quot;
           </blockquote>
           <h2 id="why-co2" className="text-2xl font-bold mb-4">Why CO2 Concentrations?</h2>
           <p className="text-left text-lg mb-4">
             &emsp; &emsp; CO2 levels in the atmosphere have risen significantly due to human activities like burning fossil fuels 
             (coal, oil, and natural gas), deforestation, and industrial processes. Monitoring CO2 helps scientists directly 
             link these activities to climate change. <br />
-            &emsp; &emsp; CO2 is a major greenhouse gas, meaning it traps heat in the Earth’s atmosphere. This trapped heat leads to 
+            &emsp; &emsp; CO2 is a major greenhouse gas, meaning it traps heat in the Earth&apos;s atmosphere. This trapped heat leads to 
             global warming, which causes a wide range of environmental impacts, including melting ice caps, rising sea levels, 
             and more frequent extreme weather events.
             High CO2 levels can also trigger feedback loops that makes matters worse for climate change. For instance, as temperatures rise, 
@@ -33,9 +33,9 @@ const CO2ConcentrationsPage = () => {
             life, particularly organisms with calcium carbonate shells or skeletons, like corals and some shellfish. 
             This impacts biodiversity and the health of marine ecosystems.
             <br /> &emsp; &emsp; Lastly, tracking CO2 concentrations informs climate policy and mitigation strategies. Accurate data on CO2 levels help governments 
-            and organizations set targets for reducing emissions, develop renewable energy sources, and implement carbon capture technologies .
+            and organizations set targets for reducing emissions, develop renewable energy sources, and implement carbon capture technologies.
             Also, by studying ice cores and other geological records, scientists have found that current CO2 levels are higher 
-            than they’ve been in at least 800,000 years. This historical context underscores the urgency in creating plans
+            than they&apos;ve been in at least 800,000 years. This historical context underscores the urgency in creating plans
             to slow down the effects of climate change.
           </p>
           <h2 id="global-mauna-loa" className="text-2xl font-bold mb-4">Global vs Mauna Loa CO2 Concentrations</h2>
