@@ -2,10 +2,10 @@ import { NextResponse } from 'next/server';
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
-const dbPath = path.join(process.cwd(), '../database/climate_change.db');
+const dbPath = path.join(process.cwd(), 'database/climate_change.db'); 
 const db = new sqlite3.Database(dbPath);
 
-export async function GET(request: Request, { params }: { params: { table: string } }) {
+export async function GET(request: Request, { params }: { params: { table: string } }): Promise<Response> {
     const { table } = params;
 
     if (!table) {
@@ -16,8 +16,9 @@ export async function GET(request: Request, { params }: { params: { table: strin
         db.all(`SELECT * FROM ${table}`, [], (err, rows) => {
             if (err) {
                 reject(NextResponse.json({ error: err.message }, { status: 500 }));
+            } else {
+                resolve(NextResponse.json({ data: rows }, { status: 200 }));
             }
-            resolve(NextResponse.json({ data: rows }, { status: 200 }));
         });
     });
 }
