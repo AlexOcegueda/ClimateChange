@@ -22,7 +22,7 @@ const CO2Graphs: React.FC = () => {
   const [mloAnnualGrowth, setMloAnnualGrowth] = useState<CO2Data[]>([]);
   const [globalMonthly, setGlobalMonthly] = useState<CO2Data[]>([]);
   const [mloMonthly, setMloMonthly] = useState<CO2Data[]>([]);
-  const [season, setSeason] = useState("Winter");
+  const [season, setSeason] = useState<"Winter" | "Spring" | "Summer" | "Fall">("Winter");
   const [activeTab, setActiveTab] = useState("annualGrowth");
   const [projections, setProjections] = useState<Projection[]>([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -200,7 +200,7 @@ const CO2Graphs: React.FC = () => {
     yKey: keyof CO2Data,
     yRange: [number, number]
   ) => {
-    const seasonMonths = {
+    const seasonMonths: Record<string, number[]> = {
       Winter: [12, 1, 2],
       Spring: [3, 4, 5],
       Summer: [6, 7, 8],
