@@ -3,7 +3,7 @@
 import React from 'react';
 import NavBar from '../../../components/NavBar';
 import FooterNav from '../../../components/FooterNav';
-import LandOcean from './LandOcean.tsx';
+import LandOcean from './LandOcean';
 
 const TemperaturePage = () => {
   return (
@@ -12,10 +12,10 @@ const TemperaturePage = () => {
       <div className="w-full max-w-full mx-auto text-center flex-grow">
         <div className="relative flex justify-center mb-8">
           <div className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white p-4">04</div>
-          <div className="absolute left-0 right-0 bg-white h-full -z-10" style={{ height: '3rem', sm: { height: '4rem' }, md: { height: '6rem' }}}></div>
+          <div className="absolute left-0 right-0 bg-white -z-10 h-12 sm:h-16 md:h-24"></div>
           <h1 className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">TEMPERATURE</h1>
         </div>
-        <main className="bg-white p-8 mx-auto shadow-lg rounded-lg" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
+        <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
           <blockquote className="text-3xl text-gray-500 mb-8">
             &quot;How have the land-ocean temperature anomalies changed globally, in the Northern Hemisphere, 
             and in the Southern Hemisphere over the past century, and what significant trends can be observed from these changes?&quot;

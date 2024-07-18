@@ -11,7 +11,7 @@ const ResourcesPage = () => {
       <div className="w-full max-w-full mx-auto text-center flex-grow">
         <div className="relative flex justify-center mb-8">
           <div className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white p-4">06</div>
-          <div className="absolute left-0 right-0 bg-white h-full -z-10" style={{ height: '3rem', sm: { height: '4rem' }, md: { height: '6rem' }}}></div>
+          <div className="absolute left-0 right-0 bg-white h-12 sm:h-16 md:h-24 -z-10"></div>
           <h1 className="ml-4 text-[2rem] sm:text-[3rem] md:text-[5rem] font-bold text-[#b2c3ee] z-10 bg-white flex-grow flex items-center pl-5">RESOURCES</h1>
         </div>
         <main className="bg-white p-8 mx-auto shadow-lg rounded-lg flex-grow" style={{ maxWidth: '60rem', marginLeft: 'auto', marginRight: 'auto' }}>
