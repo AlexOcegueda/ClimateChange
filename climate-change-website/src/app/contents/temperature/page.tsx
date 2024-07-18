@@ -3,7 +3,7 @@
 import React from 'react';
 import NavBar from '../../../components/NavBar';
 import FooterNav from '../../../components/FooterNav';
-import LandOcean from './LandOcean.tsx';
+import LandOcean from './LandOcean';
 
 const TemperaturePage = () => {
   return (

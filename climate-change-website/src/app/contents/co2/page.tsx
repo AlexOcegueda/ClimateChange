@@ -2,7 +2,7 @@
 
 import React from 'react';
 import NavBar from '../../../components/NavBar';
-import CO2Graphs from './CO2Graphs.tsx';
+import CO2Graphs from './CO2Graphs';
 import FooterNav from '../../../components/FooterNav';
 
 const CO2ConcentrationsPage = () => {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import NavBar from '../../../components/NavBar';
-import SeaLevelTrends from './SeaLevelTrends.tsx';
+import SeaLevelTrends from './SeaLevelTrends';
 import FooterNav from '../../../components/FooterNav';
 
 const SeaLevelsTrendsPage = () => {
