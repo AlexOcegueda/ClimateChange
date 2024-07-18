@@ -5,6 +5,14 @@
 ### Overview
 This repository contains a comprehensive data analysis and visualization tool designed to track and understand climate change trends. By leveraging historical temperature records and other climate-related datasets, this project aims to provide insights into global warming and its impacts on the environment.
 
+#### Currently Under Review
+The website is very close to being deployed it just needs a few more fixes. Here are some screenshots of how its coming along behind the scenes!
+
+![Climate Change Home](./assets/images/home.png)
+![Climate Change Contents](./assets/images/contents.png)
+![Climate Change Graph1](./assets/images/graph1.png)
+![Climate Change Graph2](./assets/images/graph2.png)
+
 ### Objectives
 - **Data Collection**: Gather and process historical climate data from reputable sources.
 - **Data Cleaning**: Ensure data integrity through thorough cleaning and preprocessing.
