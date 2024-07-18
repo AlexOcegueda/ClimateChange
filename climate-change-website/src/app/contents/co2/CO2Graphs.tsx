@@ -17,12 +17,15 @@ interface Projection {
   average: number;
 }
 
+const seasons = ["Winter", "Spring", "Summer", "Fall"] as const;
+type Season = typeof seasons[number];
+
 const CO2Graphs: React.FC = () => {
   const [globalAnnualGrowth, setGlobalAnnualGrowth] = useState<CO2Data[]>([]);
   const [mloAnnualGrowth, setMloAnnualGrowth] = useState<CO2Data[]>([]);
   const [globalMonthly, setGlobalMonthly] = useState<CO2Data[]>([]);
   const [mloMonthly, setMloMonthly] = useState<CO2Data[]>([]);
-  const [season, setSeason] = useState<"Winter" | "Spring" | "Summer" | "Fall">("Winter");
+  const [season, setSeason] = useState<Season>("Winter");
   const [activeTab, setActiveTab] = useState("annualGrowth");
   const [projections, setProjections] = useState<Projection[]>([]);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -200,7 +203,7 @@ const CO2Graphs: React.FC = () => {
     yKey: keyof CO2Data,
     yRange: [number, number]
   ) => {
-    const seasonMonths: Record<string, number[]> = {
+    const seasonMonths: Record<Season, number[]> = {
       Winter: [12, 1, 2],
       Spring: [3, 4, 5],
       Summer: [6, 7, 8],
@@ -366,7 +369,7 @@ const CO2Graphs: React.FC = () => {
           <select
             id="seasonType"
             value={season}
-            onChange={(e) => setSeason(e.target.value)}
+            onChange={(e) => setSeason(e.target.value as Season)}
           >
             <option value="Winter">Winter</option>
             <option value="Spring">Spring</option>
