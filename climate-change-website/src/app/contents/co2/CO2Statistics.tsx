@@ -39,8 +39,8 @@ const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
         );
         setDecadeData(completeDecadeData);
 
-        const x = completeDecadeData.map((d: DecadeData) => d.decade);
-        const y = completeDecadeData.map((d: DecadeData) => d.average);
+        const x: number[] = completeDecadeData.map((d: DecadeData) => d.decade);
+        const y: number[] = completeDecadeData.map((d: DecadeData) => d.average);
 
         const n = x.length;
         const sumX = d3.sum(x);
@@ -84,7 +84,7 @@ const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
       const height = +svg.attr("height") - margin.top - margin.bottom;
 
       const x = d3
-        .scaleBand()
+        .scaleBand<string>()
         .domain(decadeData.map((d) => d.decade.toString()))
         .range([0, width])
         .padding(0.1);
@@ -100,7 +100,7 @@ const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
 
       g.append("g")
         .attr("transform", `translate(0,${height})`)
-        .call(d3.axisBottom(x).tickFormat(d3.format("d")));
+        .call(d3.axisBottom(x).tickFormat(d3.format("d") as (n: string) => string));
 
       g.append("g").call(d3.axisLeft(y));
 
