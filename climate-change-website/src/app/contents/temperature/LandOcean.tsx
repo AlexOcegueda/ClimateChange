@@ -152,9 +152,9 @@ const LandOceanTemperatureAnomalies: React.FC = () => {
         .attr("r", 3)
         .attr("fill", color)
         .attr("data-year", d => d.year)
-        .on("mouseover", mouseover as any)
-        .on("mousemove", mousemove as any)
-        .on("mouseout", mouseout as any);
+        .on("mouseover", (event: MouseEvent, d: TemperatureData) => mouseover(event, d))
+        .on("mousemove", (event: MouseEvent) => mousemove(event))
+        .on("mouseout", () => mouseout());
     };
 
     if (showGlobal) {
