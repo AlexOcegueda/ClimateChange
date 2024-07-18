@@ -45,8 +45,8 @@ const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
         const n = x.length;
         const sumX = d3.sum(x);
         const sumY = d3.sum(y);
-        const sumXY = d3.sum(x.map((xi, i) => xi * y[i]));
-        const sumXX = d3.sum(x.map((xi) => xi * xi));
+        const sumXY = d3.sum(x.map((xi: number, i: number) => xi * y[i]));
+        const sumXX = d3.sum(x.map((xi: number) => xi * xi));
 
         const slope =
           (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
