@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar';
@@ -11,23 +11,25 @@ export default function HomePage() {
   const tableOfContentsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        setScrollY(window.scrollY);
+      };
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleResize);
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('resize', handleResize);
 
-    handleResize();
+      handleResize();
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   const handleLearnMoreClick = () => {
