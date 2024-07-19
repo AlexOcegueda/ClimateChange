@@ -2,8 +2,7 @@ import { NextResponse } from 'next/server';
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
-const isVercel = process.env.VERCEL_ENV !== undefined;
-const dbPath = isVercel ? path.join(process.cwd(), 'database/climate_change.db') : path.join(process.cwd(), '../database/climate_change.db');
+const dbPath = process.env.DATABASE_PATH || path.join(process.cwd(), 'database/climate_change.db');
 
 console.log("Database path: ", dbPath);
 
