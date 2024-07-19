@@ -5,13 +5,10 @@
 ### Overview
 This repository contains a comprehensive data analysis and visualization tool designed to track and understand climate change trends. By leveraging historical temperature records and other climate-related datasets, this project aims to provide insights into global warming and its impacts on the environment.
 
-#### Currently Under Review
-The website is very close to being deployed it just needs a few more fixes. Here are some screenshots of how its coming along behind the scenes!
+It is officially up @ https://climate-change-git-website-alexoceguedacastros-projects.vercel.app/ !
 
-![Climate Change Home](./assets/images/home.png)
-![Climate Change Contents](./assets/images/contents.png)
-![Climate Change Graph1](./assets/images/graph1.png)
-![Climate Change Graph2](./assets/images/graph2.png)
+Let me know of any bugs or improvements I can make to the website through my email: alexocegueda59@gmail.com.
+Feel free to fork and submit pull requests :) 
 
 ### Objectives
 - **Data Collection**: Gather and process historical climate data from reputable sources.
@@ -186,3 +183,8 @@ Special thanks to the data providers for making their data publicly available:
 - **NOAA Tides and Currents**: [US Linear Relative Sea Level Trends](https://tidesandcurrents.noaa.gov/sltrends/mslUSTrendsTable.html)
   - "Data provided by NOAA Tides and Currents. Accessed on 2024-06-17."
   - Contact them: (https://tidesandcurrents.noaa.gov/contact.html)
+
+## License
+
+This is covered under MIT License see the file in the repo for more info. 
+
