@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 const pages = [
@@ -15,15 +15,15 @@ const pages = [
 ];
 
 export default function FooterNav() {
-  const router = useRouter();
+  const pathname = usePathname();
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const currentPath = window.location.pathname;
+    const currentPath = pathname;
     const index = pages.findIndex(page => page.href === currentPath);
     setCurrentIndex(index);
-  }, [router.pathname]);
+  }, [pathname]);
 
   const previousPage = currentIndex > 0 ? pages[currentIndex - 1] : null;
   const nextPage = currentIndex < pages.length - 1 && currentIndex !== 6 ? pages[currentIndex + 1] : null;

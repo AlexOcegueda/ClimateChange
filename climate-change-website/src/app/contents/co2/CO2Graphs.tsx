@@ -28,21 +28,25 @@ const CO2Graphs: React.FC = () => {
   const [season, setSeason] = useState<Season>("Winter");
   const [activeTab, setActiveTab] = useState("annualGrowth");
   const [projections, setProjections] = useState<Projection[]>([]);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(800); // Default width
 
   const annualGrowthRef = useRef<SVGSVGElement | null>(null);
   const seasonalRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener('resize', handleResize);
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   useEffect(() => {

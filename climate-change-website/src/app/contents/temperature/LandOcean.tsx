@@ -49,7 +49,7 @@ const LandOceanTemperatureAnomalies: React.FC = () => {
     const svgElement = svgRef.current;
     if (!svgElement) return;
 
-    const svg = d3.select(svgElement);
+    const svg = d3.select<SVGSVGElement, unknown>(svgElement);
     svg.selectAll("*").remove();
 
     const margin = { top: 50, right: 30, bottom: 70, left: 50 };
@@ -134,9 +134,9 @@ const LandOceanTemperatureAnomalies: React.FC = () => {
 
     const mouseout = () => {
       tooltip.style("display", "none");
-      d3.selectAll("circle").attr("r", 3).attr("fill", (d: TemperatureData) => {
-        if (globalData.includes(d)) return "red";
-        if (nhData.includes(d)) return "blue";
+      d3.selectAll("circle").attr("r", 3).attr("fill", (d) => {
+        if (globalData.includes(d as TemperatureData)) return "red";
+        if (nhData.includes(d as TemperatureData)) return "blue";
         return "green";
       });
     };
@@ -152,9 +152,9 @@ const LandOceanTemperatureAnomalies: React.FC = () => {
         .attr("r", 3)
         .attr("fill", color)
         .attr("data-year", d => d.year)
-        .on("mouseover", mouseover as any)
-        .on("mousemove", mousemove as any)
-        .on("mouseout", mouseout as any);
+        .on("mouseover", (event: MouseEvent, d: TemperatureData) => mouseover(event, d))
+        .on("mousemove", (event: MouseEvent) => mousemove(event))
+        .on("mouseout", () => mouseout());
     };
 
     if (showGlobal) {

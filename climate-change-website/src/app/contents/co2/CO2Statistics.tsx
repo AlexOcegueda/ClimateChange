@@ -16,18 +16,22 @@ interface CO2StatisticsProps {
 const CO2Statistics: React.FC<CO2StatisticsProps> = ({ setProjections }) => {
   const [decadeData, setDecadeData] = useState<DecadeData[]>([]);
   const svgRef = useRef<SVGSVGElement | null>(null);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(800); 
 
   useEffect(() => {
-    const handleResize = () => {
+    if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener("resize", handleResize);
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }
   }, []);
 
   useEffect(() => {
