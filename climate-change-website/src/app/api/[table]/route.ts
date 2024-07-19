@@ -4,8 +4,6 @@ import path from 'path';
 
 const dbPath = process.env.DATABASE_PATH || path.join(process.cwd(), 'database/climate_change.db');
 
-console.log("Database path: ", dbPath);
-
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error("Database connection failed: ", err);
@@ -17,6 +15,8 @@ const db = new sqlite3.Database(dbPath, (err) => {
 export async function GET(request: Request, { params }: { params: { table: string } }): Promise<Response> {
     const { table } = params;
 
+    console.log("Requested table:", table);
+    
     if (!table) {
         return NextResponse.json({ error: 'Table name is required' }, { status: 400 });
     }
