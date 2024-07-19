@@ -8,12 +8,10 @@ export default function NavBar() {
   return (
     <header className="flex justify-between items-center p-4 bg-transparent z-20 relative">
       <nav className="space-x-4">
-        <Link href="/" className="text-lg font-semibold text-gray-900">home</Link>
-      </nav>
+        <img className="h-[50px] w-auto" src="/assets/earth_logo.png" alt="home" /></nav>
       <nav className="space-x-4 flex">
-        <Link href="/about" className="nav-link text-lg font-semibold text-white">about</Link>
-        <Link href="/locations" className="nav-link text-lg font-semibold text-white">github</Link>
-        <Link href="/contact" className="nav-link text-lg font-semibold text-white">contact</Link>
+        <Link href="https://ocegueda.dev/" className="nav-link text-lg font-semibold text-white">portfolio</Link>
+        <Link href="https://github.com/AlexOcegueda/ClimateChange" className="nav-link text-lg font-semibold text-white">github</Link>
       </nav>
     </header>
   );
