@@ -28,7 +28,7 @@ const CO2Graphs: React.FC = () => {
   const [season, setSeason] = useState<Season>("Winter");
   const [activeTab, setActiveTab] = useState("annualGrowth");
   const [projections, setProjections] = useState<Projection[]>([]);
-  const [windowWidth, setWindowWidth] = useState(800); // Default width
+  const [windowWidth, setWindowWidth] = useState(800); 
 
   const annualGrowthRef = useRef<SVGSVGElement | null>(null);
   const seasonalRef = useRef<SVGSVGElement | null>(null);
