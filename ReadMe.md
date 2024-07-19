@@ -5,7 +5,7 @@
 ### Overview
 This repository contains a comprehensive data analysis and visualization tool designed to track and understand climate change trends. By leveraging historical temperature records and other climate-related datasets, this project aims to provide insights into global warming and its impacts on the environment.
 
-It is officially up @ https://climate-change-git-website-alexoceguedacastros-projects.vercel.app/ !
+It is officially up @ https://climate-change-delta.vercel.app/ !
 
 Let me know of any bugs or improvements I can make to the website through my email: alexocegueda59@gmail.com.
 Feel free to fork and submit pull requests :) 
